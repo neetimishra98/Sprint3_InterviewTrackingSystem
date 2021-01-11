@@ -19,7 +19,7 @@ const HomeComponent = () => {
             <AdminComponent></AdminComponent>
 
             {/* <HRComponent></HRComponent>
-            <TechComponent></TechComponent> */}
+            <TechComponent></TechComponent>*/} 
         
         </div>
     );
