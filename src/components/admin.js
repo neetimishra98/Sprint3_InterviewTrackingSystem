@@ -2,8 +2,13 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
+<<<<<<< HEAD
 import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
 import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
+=======
+import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
+import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
+>>>>>>> 4abb6e8bc3fbc298f93907a73bfac0f0bd6b23ff
 
 // Bootstrap
 
@@ -13,16 +18,16 @@ const AdminComponent = () => {
     return (
         <div>
             <Tabs defaultActiveKey="Employee" id="uncontrolled-tab-example">
-                <Tab eventKey="Employee" title="Candidate Operations">
+                <Tab eventKey="Candidate " title="Candidate Operations">
                     <CandidateForAdmin></CandidateForAdmin>
                 </Tab>
-                <Tab eventKey="PanelMember" title="Employee Operations">
+                <Tab eventKey="Employee" title="Employee Operations">
                     <EmployeeForAdmin></EmployeeForAdmin>
                 </Tab>
-                <Tab eventKey="Candidate" title="Interview Scheduler Operations">
+                <Tab eventKey="InterviewScheduler" title="Interview Scheduler Operations">
                     <InterviewSchedulerForAdmin></InterviewSchedulerForAdmin>
                 </Tab>
-                <Tab eventKey="InterviewScheduler" title="Panel Member Operations">
+                <Tab eventKey="PanelMember" title="Panel Member Operations">
                     <PanelMemberForAdmin></PanelMemberForAdmin>
                 </Tab>
             </Tabs>
