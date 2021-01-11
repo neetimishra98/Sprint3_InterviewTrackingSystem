@@ -1,5 +1,7 @@
 //Panel Services Accessible By The Admin....
 import SurrenderAsHR from './services/surrenderAsHr'
+import ShowPanelMembers from './services/showpanelmember'
+import DeletePanelMember from './services/deletepanelmember'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
@@ -12,15 +14,12 @@ const PanelMemberForAdmin = () => {
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">
                             Surrender As HR Panel
-                    </Accordion.Toggle>
+                        </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
                     {/* Search an Panel component */}
                     <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
                     {/* Search an Panel component */}
-                        {/* Search an Employee component */}
-                        <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
-                        {/* Search an Employee component */}
                     </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -37,7 +36,7 @@ const PanelMemberForAdmin = () => {
                 </Card>
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        <Accordion.Toggle as={Button} variant="link" eventKey="2">
                             Delete Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
