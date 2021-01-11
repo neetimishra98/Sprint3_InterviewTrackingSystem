@@ -27,7 +27,7 @@ const InterviewSchedulerForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
                         View All Candidates using Interview id
                     </Accordion.Toggle>
                     </Card.Header>
@@ -40,11 +40,11 @@ const InterviewSchedulerForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
                         View All HrInterview Members
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="1">
+                    <Accordion.Collapse eventKey="2">
                     {/* Fetch all Interview Members from InterviewScheduler component */}
                     <Card.Body><ViewListForHr></ViewListForHr></Card.Body>
                     {/* Fetch all Interview Members from InterviewScheduler component */}
@@ -55,11 +55,11 @@ const InterviewSchedulerForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
                         Search an Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="0">
+                    <Accordion.Collapse eventKey="3">
                     {/* Search an Employee component */}
                     <Card.Body><CancelInterview></CancelInterview></Card.Body>
                     {/* Search an Employee component */}
@@ -68,11 +68,11 @@ const InterviewSchedulerForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
                         Cancel Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="1">
+                    <Accordion.Collapse eventKey="4">
                     {/* Fetch all Employee component */}
                     <Card.Body><div></div></Card.Body>
                     {/* Fetch all Employee component */}
