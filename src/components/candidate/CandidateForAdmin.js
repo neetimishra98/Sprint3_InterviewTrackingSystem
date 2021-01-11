@@ -23,11 +23,11 @@ const CandidateForAdmin = () => {
                 </Card>
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
                         View a Candidate(Tech)
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="0">
+                    <Accordion.Collapse eventKey="1">
                     {/* Search an Candidate component */}
                     <Card.Body><ViewACandidateForTech></ViewACandidateForTech></Card.Body>
                     {/* Search an Candidate component */}

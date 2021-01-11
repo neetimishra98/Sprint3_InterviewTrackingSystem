@@ -18,13 +18,6 @@ const ViewACandidateForTech = () => {
                         <thead>
                         <th>Candidate ID</th>
                             <th>Candidate Name</th>
-                            <th>Location</th>
-                            <th>Qualification</th>
-                            <th>Designation</th>
-                            <th>Experience</th>
-                            <th>Primary Skills</th>
-                            <th>Secondary Skills</th>
-                            <th>Notice Period</th>
                         </thead>
                         <tbody id="table_content">
                         </tbody>

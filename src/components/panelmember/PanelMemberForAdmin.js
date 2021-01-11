@@ -2,7 +2,7 @@
 import SurrenderAsHR from './services/surrenderAsHr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
-import SurrenderAsTechPanel from './services/surrenderasatech'
+import SurrenderAsTechPanel from './services/surrenderastechpanel'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
@@ -49,14 +49,14 @@ const PanelMemberForAdmin = () => {
                 </Card>
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Surrender As Tech Panel
-                        </Accordion.Toggle>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
+                        Surrender As tech panel
+                    </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                    {/* Surrender as tech Panel component */}
+                    <Accordion.Collapse eventKey="3">
+                    {/* Surrender as tech panel component */}
                     <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
-                    {/* Surrender as tech component */}
+                    {/* Surrender as tech panel component */}
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
