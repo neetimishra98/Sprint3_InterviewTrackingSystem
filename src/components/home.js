@@ -1,15 +1,30 @@
-//Home Component
-//Inside this every service component could reside
-//Inside every xyz-service-component.js there would be components of their respective candidate, employee, panelmember and interview services from the above folders.
-//Do not change home.js or App.js while git based development without permissions, would lead to conflicts
-//Add this to WARNINGS.info once development starts 
+//Home Component : CHECK WARNING.info FOR NOTES.....
+
+import AdminComponent from './admin';
+import TechComponent from './techpanelmember';
+import HRComponent from './hrpanelmember';
+
+
+//Installed Components
+import { Route, Link, Switch } from 'react-router-dom';
+//Bootstrap
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Button } from 'react-bootstrap'; 
+
 
 const HomeComponent = () => {
     return (
-        <div>.....</div>
+        <div>
+            {/* Some Logic To Check If User Logged In Is Admin Or A Panel Member.... */}
+            <AdminComponent></AdminComponent>
+
+            {/* <HRComponent></HRComponent>
+            <TechComponent></TechComponent> */}
+        
+        </div>
     );
 }
 
 
 
-export default HomeComponent
+export default HomeComponent;
