@@ -15,6 +15,9 @@ const PanelMemberForAdmin = () => {
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
+                    {/* Search an Panel component */}
+                    <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
+                    {/* Search an Panel component */}
                         {/* Search an Employee component */}
                         <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
                         {/* Search an Employee component */}
