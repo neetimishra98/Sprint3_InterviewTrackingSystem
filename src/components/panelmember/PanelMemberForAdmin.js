@@ -22,6 +22,9 @@ const PanelMemberForAdmin = () => {
                     {/* Search an Panel component */}
                     </Accordion.Collapse>
                 </Card>
+
+
+
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -34,6 +37,8 @@ const PanelMemberForAdmin = () => {
                         {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
+
+
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="2">
