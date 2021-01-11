@@ -2,19 +2,12 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
-<<<<<<< HEAD
-import PanelMemberForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-//import InterviewSchedulerForAdmin from './panelmember/PanelMemberForAdmin'
 import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
-=======
-<<<<<<< HEAD
 import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
-import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-=======
-import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
->>>>>>> 4abb6e8bc3fbc298f93907a73bfac0f0bd6b23ff
->>>>>>> 2e396b29a0c3f734eef5f0aed8d7df644907cede
+//import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
+
+//import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
+//import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
 
 // Bootstrap
 
