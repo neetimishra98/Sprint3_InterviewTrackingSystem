@@ -2,8 +2,8 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
-import PanelMemberForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-import InterviewSchedulerForAdmin from './panelmember/PanelMemberForAdmin'
+import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
+import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 
 // Bootstrap
 
