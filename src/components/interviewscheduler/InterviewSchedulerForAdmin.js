@@ -3,7 +3,10 @@ import GiveHrRating from './services/givehrrating'
 import ViewInterviewMembersForHr from './services/viewinterviewmembersforhr'
 import ViewListForHr from './services/viewlistforhr'
 import CancelInterview from './services/cancelinterview.js'
-import { Accordion, Card, Button } from 'react-bootstrap'
+import GiveTechRating from './services/givetechrating';
+import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
+import { Accordion, Card, Button } from 'react-bootstrap';
+
 
 
 const InterviewSchedulerForAdmin = () => {
@@ -25,6 +28,7 @@ const InterviewSchedulerForAdmin = () => {
                     </Accordion.Collapse>
                 </Card>
 
+
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -37,6 +41,7 @@ const InterviewSchedulerForAdmin = () => {
                     {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
                     </Accordion.Collapse>
                 </Card>
+
 
                 <Card>
                     <Card.Header>
@@ -66,6 +71,9 @@ const InterviewSchedulerForAdmin = () => {
                     </Accordion.Collapse>
                 </Card>
 
+
+
+
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="4">
@@ -75,6 +83,52 @@ const InterviewSchedulerForAdmin = () => {
                     <Accordion.Collapse eventKey="4">
                     {/* Fetch all Employee component */}
                     <Card.Body><div></div></Card.Body>
+                    {/* Fetch all Employee component */}
+                    </Accordion.Collapse>
+                </Card>
+
+
+
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="5">
+                        View All Interview Members For Tech
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="5">
+                    {/* Fetch all Employee component */}
+                    <Card.Body><div></div></Card.Body>
+                    {/* Fetch all Employee component */}
+                    </Accordion.Collapse>
+                </Card>
+
+
+
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="6">
+                        View All Candidates using Interview Id
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="6">
+                    {/* Fetch all Employee component */}
+                    <Card.Body><ViewInterviewMemberForTech></ViewInterviewMemberForTech></Card.Body>
+                    {/* Fetch all Employee component */}
+                    </Accordion.Collapse>
+                </Card>
+
+
+
+
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="7">
+                       Give Tech Rating to a Candidate
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="7">
+                    {/* Fetch all Employee component */}
+                    <Card.Body><GiveTechRating></GiveTechRating></Card.Body>
                     {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
