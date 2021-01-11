@@ -34,7 +34,7 @@ const PanelMemberForAdmin = () => {
                 </Card>
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        <Accordion.Toggle as={Button} variant="link" eventKey="2">
                             Delete Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
