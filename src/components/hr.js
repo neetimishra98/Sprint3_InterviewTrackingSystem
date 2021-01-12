@@ -2,7 +2,7 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
-import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
+import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 
@@ -20,7 +20,9 @@ const HRComponent = () => {
 
                 <Tab eventKey="PanelMember" title="HR Operations">
                     <PanelMemberForHR></PanelMemberForHR>
+                    <CancelInterviewForHr></CancelInterviewForHr>
                 </Tab>
+
             </Tabs>
         </div>
     );
