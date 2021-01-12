@@ -11,7 +11,8 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 //import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
 import TechServices from './interviewscheduler/techservices';
-
+import PanelMemberForTech from './panelmember/PanelMemberForTech'
+import CandidateForTech from './candidate/CandidateForTech'
 // Bootstrap
 
 import { Tab, Tabs } from 'react-bootstrap'
@@ -19,11 +20,13 @@ import { Tab, Tabs } from 'react-bootstrap'
 const TechComponent = () => {
     return (
         <div>
-            <Tabs defaultActiveKey="InterviewScheduler" id="uncontrolled-tab-example">
+            <Tabs defaultActiveKey="Home" id="uncontrolled-tab-example">
     
             <Tab eventKey="Interviewscheduler" title="TECH">
                 <TechServices></TechServices>
-</Tab>
+                <PanelMemberForTech></PanelMemberForTech>
+                <CandidateForTech></CandidateForTech>
+            </Tab>
             </Tabs> 
         </div>
     );
