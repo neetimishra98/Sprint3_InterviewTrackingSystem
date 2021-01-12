@@ -1,8 +1,11 @@
 //Admin Services Component : CHECK WARNING.info FOR NOTES.....
 
+<<<<<<< HEAD
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
 import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
+=======
+>>>>>>> e6cd90cdc5687f499942b5bcc27988d6bc5987a2
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 
@@ -17,16 +20,8 @@ const HRComponent = () => {
     return (
         <div>
             <Tabs defaultActiveKey="Employee" id="uncontrolled-tab-example">
-                <Tab eventKey="Candidate " title="Candidate Operations">
-                    <CandidateForAdmin></CandidateForAdmin>
-                </Tab>
-                <Tab eventKey="Employee" title="Employee Operations">
-                    <EmployeeForAdmin></EmployeeForAdmin>
-                </Tab>
-                <Tab eventKey="InterviewScheduler" title="Interview Scheduler Operations">
-                    <InterviewSchedulerForAdmin></InterviewSchedulerForAdmin>
-                </Tab>
-                <Tab eventKey="PanelMember" title="Panel Member Operations">
+
+                <Tab eventKey="PanelMember" title="HR Operations">
                     <PanelMemberForHR></PanelMemberForHR>
                 </Tab>
             </Tabs>
