@@ -2,7 +2,7 @@
 
 import AdminComponent from './admin';
 import TechComponent from './techpanelmember';
-import HRComponent from './hrpanelmember';
+import HRComponent from './hr';
 
 
 //Installed Components
@@ -16,8 +16,11 @@ const HomeComponent = () => {
     return (
         <div>
             {/* Some Logic To Check If User Logged In Is Admin Or A Panel Member.... */}
+            <h1>Admin</h1>
             <AdminComponent></AdminComponent>
-
+            <br></br>
+            <h1>HR Panel</h1>
+            <HRComponent></HRComponent>
             {/* <HRComponent></HRComponent>
             <TechComponent></TechComponent>*/} 
         
