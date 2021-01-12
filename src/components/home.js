@@ -2,6 +2,8 @@
 
 import AdminComponent from './admin';
 import TechComponent from './techpanelmember';
+import HRComponent from './hrpanelmember';
+
 
 //Installed Components
 import { Route, Link, Switch } from 'react-router-dom';
@@ -15,8 +17,9 @@ const HomeComponent = () => {
         <div>
             {/* Some Logic To Check If User Logged In Is Admin Or A Panel Member.... */}
             <AdminComponent></AdminComponent>
+
             {/* <HRComponent></HRComponent>
-            <TechComponent></TechComponent>*/} 
+            <TechComponent></TechComponent> */}
         
         </div>
     );
