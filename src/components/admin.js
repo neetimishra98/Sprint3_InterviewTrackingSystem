@@ -18,7 +18,7 @@ import { Tab, Tabs } from 'react-bootstrap'
 const AdminComponent = () => {
     return (
         <div>
-            <Tabs defaultActiveKey="Employee" id="uncontrolled-tab-example">
+            <Tabs variant="pills" defaultActiveKey="Employee" id="uncontrolled-tab-example">
                 <Tab eventKey="Candidate " title="Candidate Operations">
                     <CandidateForAdmin></CandidateForAdmin>
                 </Tab>
