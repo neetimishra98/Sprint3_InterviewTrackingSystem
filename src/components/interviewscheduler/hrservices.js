@@ -1,8 +1,8 @@
 import GiveHrRating from './services/givehrrating'
 import ViewInterviewMembersForHr from './services/viewinterviewmembersforhr'
 import ViewListForHr from './services/viewlistforhr'
-import CancelInterview from './services/cancelinterview.js'
-import UpdateInterview from "./services/updatescheduleinterview";
+import CancelInterviewForHr from './hrservices/cancelinterviewforhr'
+import UpdateInterviewForHr from "./services/updatescheduleinterview";
 import { Accordion, Card, Button } from 'react-bootstrap';
 
 
@@ -52,6 +52,18 @@ const HRServices = () => {
                     </Accordion.Collapse>
                 </Card>
 
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        View All Candidates using Interview id
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="1">
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
+                    <Card.Body><CancelInterviewForHr></CancelInterviewForHr></Card.Body>
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
+                    </Accordion.Collapse>
+                </Card>
              </Accordion>
         </div>
     );
