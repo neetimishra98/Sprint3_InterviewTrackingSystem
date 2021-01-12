@@ -4,7 +4,7 @@ import './App.css';
 import Logo from "./logo.svg"
 import HomeComponent from './components/home';
 import AboutUsComponent from './components/about';
-
+import HomeHRComponent from './components/homehr';
 
 //Installed Components
 import { Route, Link, Switch } from 'react-router-dom';
@@ -46,6 +46,7 @@ function App() {
       {/* Switching the content from nav operations */}
       <Switch>
         <Route path='/' component={HomeComponent} exact />
+        
         <Route path='/about' component={AboutUsComponent} exact />
       </Switch>
     </div>

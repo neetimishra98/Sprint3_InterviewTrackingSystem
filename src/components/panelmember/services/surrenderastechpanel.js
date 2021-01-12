@@ -11,8 +11,8 @@ const SurrenderAsTechPanel = () => {
             <Jumbotron style={{width: 700}}>
                 <Form>
                     <Form.Group controlId="formGroupText">
-                        <Form.Label>Surrender by valid panel id</Form.Label>
-                        <Form.Control type="text" placeholder="Name or Employee ID" id="searchParameter"/>
+                        <Form.Label>Enter Panel id to surrender</Form.Label>
+                        <Form.Control type="text" placeholder="Panel ID" id="searchParameter"/>
                     </Form.Group>
                     <Table striped bordered hover size="sm">
                         <thead>
