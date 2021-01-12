@@ -1,5 +1,5 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsHR from './hrservices/surrenderashr'
+import SurrenderAsHRPanel from './hrservices/surrenderashr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
 import SurrenderAsTechPanel from './services/surrenderastechpanel'
@@ -17,9 +17,9 @@ const PanelMemberForHR = () => {
                             Surrender As HR Panel
                         </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="1">
+                    <Accordion.Collapse eventKey="0">
                     {/* Search an Panel component */}
-                    <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
+                    <Card.Body><SurrenderAsHRPanel></SurrenderAsHRPanel></Card.Body>
                     {/* Search an Panel component */}
                     </Accordion.Collapse>
                 </Card>

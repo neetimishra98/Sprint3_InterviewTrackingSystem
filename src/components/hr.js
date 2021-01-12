@@ -2,8 +2,6 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
-
-
 import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
