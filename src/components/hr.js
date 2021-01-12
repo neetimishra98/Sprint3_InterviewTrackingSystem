@@ -14,8 +14,8 @@ const HRComponent = () => {
             <Tabs defaultActiveKey="Employee" id="uncontrolled-tab-example">
 
                 <Tab eventKey="PanelMember" title="HR Operations">
-                    <PanelMemberForHR></PanelMemberForHR>
                     <SearchCandidate></SearchCandidate>
+                    <PanelMemberForHR></PanelMemberForHR>
                 </Tab>
             </Tabs>
         </div>
