@@ -8,7 +8,7 @@ const SearchCandidate = () => {
             justifyContent: "center",
             alignItems: "center"
           }}>
-            <Jumbotron style={{width: 700}}>
+            <Jumbotron style={{width: 800}}>
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Search by valid name/id</Form.Label>

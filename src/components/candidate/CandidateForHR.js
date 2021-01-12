@@ -5,7 +5,7 @@ import ViewACandidateForTech from './services/viewatechcandidate'
 import {Accordion, Card, Button } from 'react-bootstrap'
 //import CancelInterview from './services/cancelinterview.js'
 
-const CandidateForAdmin = () => {
+const CandidateForHR = () => {
     return (
         <div>
             {/* All underlying operations from services */}
@@ -22,23 +22,9 @@ const CandidateForAdmin = () => {
                     {/* Search an Candidate component */}
                     </Accordion.Collapse>
                 </Card>
-
-                
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                        View a Candidate(Tech)
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="1">
-                    {/* Search an Candidate component */}
-                    <Card.Body><ViewACandidateForTech></ViewACandidateForTech></Card.Body>
-                    {/* Search an Candidate component */}
-                    </Accordion.Collapse>
-                </Card>
             </Accordion>
         </div>
     );
 }
 
-export default CandidateForAdmin;
+export default CandidateForHR;
