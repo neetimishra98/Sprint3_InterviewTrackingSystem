@@ -30,19 +30,7 @@ const InterviewSchedulerForAdmin = () => {
 
 
 
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                        Update Schedule Interview
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="4">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><UpdateInterview></UpdateInterview></Card.Body>
-                    {/* Fetch all Employee component */}
-                    </Accordion.Collapse>
-                </Card>
-
+               
 
 
                 <Card>

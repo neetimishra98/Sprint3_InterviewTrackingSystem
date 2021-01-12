@@ -7,6 +7,8 @@ import PanelMemberForHR from './panelmember/PanelMemberForHR'
 import SearchCandidate from './candidate/CandidateForHR';
 import InterviewSchedulerForHr from './interviewscheduler/InterviewSchedulerForHr';
 
+import UpdateInterviewForHr from "./interviewscheduler/hrservices/updatescheduleinterviewforhr";
+
 // Bootstrap
 
 import { Tab, Tabs } from 'react-bootstrap'
@@ -25,9 +27,8 @@ const HRComponent = () => {
                     <SearchCandidate></SearchCandidate>
 
                     <PanelMemberForHR></PanelMemberForHR>
+
             <InterviewSchedulerForHr></InterviewSchedulerForHr>
-                   
-                    
                 </Tab>
 
             </Tabs>

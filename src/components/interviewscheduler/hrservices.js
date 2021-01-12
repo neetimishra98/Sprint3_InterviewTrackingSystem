@@ -2,7 +2,7 @@ import GiveHrRating from './services/givehrrating'
 import ViewInterviewMembersForHr from './services/viewinterviewmembersforhr'
 import ViewListForHr from './services/viewlistforhr'
 import CancelInterviewForHr from './hrservices/cancelinterviewforhr'
-import UpdateInterviewForHr from "./services/updatescheduleinterview";
+import UpdateInterviewForHr from "./hrservices/updatescheduleinterviewforhr";
 import { Accordion, Card, Button } from 'react-bootstrap';
 
 
@@ -64,6 +64,34 @@ const HRServices = () => {
                     {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
                     </Accordion.Collapse>
                 </Card>
+
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Cancel Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="1">
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
+                    <Card.Body><CancelInterviewForHr></CancelInterviewForHr></Card.Body>
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
+                    </Accordion.Collapse>
+                </Card>
+
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+
+                        Update Schedule Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                    {/* givehrrating to InterviewScheduler component */}
+                    <Card.Body><UpdateInterviewForHr></UpdateInterviewForHr></Card.Body>
+                    {/* givehrrating to InterviewScheduler component */}
+                    </Accordion.Collapse>
+                </Card>
+
              </Accordion>
         </div>
     );
