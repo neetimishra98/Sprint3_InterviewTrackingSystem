@@ -1,7 +1,7 @@
 //Home Component : CHECK WARNING.info FOR NOTES.....
 
-import AdminComponent from './admin';
-import TechComponent from './techpanelmember';
+import HRComponent from './hr';
+
 
 //Installed Components
 import { Route, Link, Switch } from 'react-router-dom';
@@ -10,12 +10,13 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'; 
 
 
-const HomeComponent = () => {
+const HomeHRComponent = () => {
     return (
         <div>
             {/* Some Logic To Check If User Logged In Is Admin Or A Panel Member.... */}
-            <AdminComponent></AdminComponent>
-            {/* <HRComponent></HRComponent>
+            {/*<AdminComponent></AdminComponent>*/}
+            <HRComponent></HRComponent>
+            {/* 
             <TechComponent></TechComponent>*/} 
         
         </div>
@@ -24,4 +25,4 @@ const HomeComponent = () => {
 
 
 
-export default HomeComponent;
+export default HomeHRComponent;
