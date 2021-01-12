@@ -20,15 +20,13 @@ import ViewListForHr from './interviewscheduler/hrservices/viewlistforhr';
 const HRComponent = () => {
     return (
         <div>
-            <Tabs defaultActiveKey="PanelMember" id="uncontrolled-tab-example">
+            <Tabs defaultActiveKey="Home" id="uncontrolled-tab-example">
 
                 <Tab eventKey="PanelMember" title="HR">
 
                     <SearchCandidate></SearchCandidate>
-
                     <PanelMemberForHR></PanelMemberForHR>
-
-            <InterviewSchedulerForHr></InterviewSchedulerForHr>
+                    <InterviewSchedulerForHr></InterviewSchedulerForHr>
                 </Tab>
 
             </Tabs>
