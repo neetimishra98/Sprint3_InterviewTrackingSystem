@@ -1,5 +1,5 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsHR from './hrservices/surrenderashr'
+import SurrenderAsHR from './services/surrenderAsHr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
 
@@ -10,7 +10,18 @@ const PanelMemberForAdmin = () => {
         <div>
             {/* All underlying operations from services */}
             <Accordion>
-
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                            Surrender As HR Panel
+                        </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                    {/* Search an Panel component */}
+                    <Card.Body><SurrenderAsHR></SurrenderAsHR></Card.Body>
+                    {/* Search an Panel component */}
+                    </Accordion.Collapse>
+                </Card>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -23,7 +34,6 @@ const PanelMemberForAdmin = () => {
                         {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
-                
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="2">

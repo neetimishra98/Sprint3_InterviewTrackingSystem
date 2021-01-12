@@ -6,12 +6,11 @@ import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
 import ViewAllInterviewMembers from './services/viewallinterviewmembers';
 import { Accordion, Card, Button } from 'react-bootstrap';
 
-
-
 const InterviewSchedulerForAdmin = () => {
     return (
         <div>
             {/* All underlying operations from services */}
+
             <Accordion>
                
                 <Card>

@@ -6,7 +6,6 @@ import HomeComponent from './components/home';
 import AboutUsComponent from './components/about';
 import HomeHRComponent from './components/homehr';
 import HomeTechComponent from './components/hometech';
-
 //Installed Components
 import { Route, Link, Switch } from 'react-router-dom';
 //Bootstrap

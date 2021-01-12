@@ -1,8 +1,8 @@
 //Employee Services Accessible By The Admin....
 
-import SearchCandidate from './hrservices/viewhrcandidate'
-import {Accordion, Card, Button } from 'react-bootstrap'
-//import CancelInterview from './services/cancelinterview.js'
+import SearchCandidate from './services/searchCandidate'
+
+import { Accordion, Card, Button } from 'react-bootstrap'
 
 const CandidateForAdmin = () => {
     return (

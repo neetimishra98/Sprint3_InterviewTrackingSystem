@@ -23,6 +23,4 @@ const HomeHRComponent = () => {
     );
 }
 
-
-
 export default HomeHRComponent;
