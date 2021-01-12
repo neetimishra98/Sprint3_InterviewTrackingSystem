@@ -1,6 +1,27 @@
+import React from 'react'
+
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
 
-const ViewInterviewMemberForTech = () => {
+
+import { useDispatch, useSelector } from 'react-redux';
+import ViewInterviewMemberForTechAction from '../../../actions/interviewscheduler/viewinterviewmemberfortechaction';
+
+const ViewInterviewMemberForTech = (props) => {
+
+    var pathVaria = null;
+    let member = useSelector((state)=>state);
+    let dispatcher = useDispatch();
+    React.useEffect(()=>ViewInterviewMemberForTechAction_Function(), [])
+        const ViewInterviewMemberForTechAction_Function = () => {
+            dispatcher(ViewInterviewMemberForTechAction(pathVaria));
+        }
+    
+    const handleSubmit = (event) =>{ 
+        pathVaria = document.getElementById("pathVariable").value;
+        dispatcher(ViewInterviewMemberForTechAction(pathVaria));
+    }
+
+
     return (
         // All Final Operations and Functions
         <div style={{
@@ -12,10 +33,10 @@ const ViewInterviewMemberForTech = () => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label> View Candidate Using interviewid</Form.Label>
-                        <Form.Control type="text" placeholder="Interview ID" id="searchParameter"/>
+                        <Form.Control id="pathVariable" type="text" placeholder="Interview ID"/>
                         <br></br>
                         <br></br>
-                        <Button variant="dark" type="submit" call>
+                        <Button variant="dark" type="button" call onClick={handleSubmit}>
                             Search
                         </Button>
                     </Form.Group>
@@ -32,12 +53,32 @@ const ViewInterviewMemberForTech = () => {
                             <th>Notice <br></br>Period</th>
                         </thead>
                         <tbody id="table_content">
+                        {renderData(member)}
                         </tbody>
                     </Table>
                 </Form>
             </Jumbotron>
         </div>
     );
+
+    function renderData(member) {   
+        console.log("interview member dispatcher object returned from the server : ", member);
+        if(member!==undefined){
+            return(
+                <tr>
+                    <td>{member.data.candidateid}</td>
+                    <td>{member.data.candidatename}</td>
+                    <td>{member.data.location}</td>
+                    <td>{member.data.qualification}</td>
+                    <td>{member.data.designation}</td>
+                    <td>{member.data.experience}</td>
+                    <td>{member.data.primaryskills}</td>
+                    <td>{member.data.secondaryskills}</td>
+                    <td>{member.data.noticeperiod}</td>
+                </tr>
+            );
+        }
+    }        
 }
 
 export default ViewInterviewMemberForTech;
