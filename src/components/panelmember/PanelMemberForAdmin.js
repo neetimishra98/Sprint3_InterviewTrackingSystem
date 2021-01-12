@@ -44,7 +44,7 @@ const PanelMemberForAdmin = () => {
                         Surrender As Tech panel
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="1">
+                    <Accordion.Collapse eventKey="2">
                     {/* Surrender as tech panel component */}
                     <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
                     {/* Surrender as tech panel component */}
@@ -58,7 +58,7 @@ const PanelMemberForAdmin = () => {
                             Show All Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="2">
+                    <Accordion.Collapse eventKey="3">
                         {/* Fetch all Employee component */}
                         <Card.Body><ShowPanelMembers></ShowPanelMembers></Card.Body>
                         {/* Fetch all Employee component */}
@@ -71,7 +71,7 @@ const PanelMemberForAdmin = () => {
                             Delete Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="3">
+                    <Accordion.Collapse eventKey="4">
                         {/* Fetch all Employee component */}
                         <Card.Body><DeletePanelMember></DeletePanelMember></Card.Body>
                         {/* Fetch all Employee component */}
