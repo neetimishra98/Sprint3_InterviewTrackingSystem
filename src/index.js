@@ -8,12 +8,18 @@ import { BrowserRouter } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import globalReducer from './reducers/globalreducer';
+
+let Store = createStore(globalReducer, 
+  applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={Store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

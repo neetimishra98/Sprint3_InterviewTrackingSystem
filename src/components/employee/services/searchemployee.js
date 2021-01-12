@@ -55,16 +55,9 @@ const SearchEmployee = (props) => {
 
     function renderData(employee) {   
         console.log("employee: ", employee);
-        return employee(() => {
-            const { employeeid, name } = employee //destructuring
-            return (
-              <tr key={employeeid}>
-                 <td>{employeeid}</td>
-                 <td>{name}</td>
-              </tr>
-           )   
-        })
-     };
+    }
+        
 }
+
 
 export default SearchEmployee;
