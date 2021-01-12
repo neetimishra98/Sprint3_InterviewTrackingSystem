@@ -54,33 +54,7 @@ const InterviewSchedulerForHr = () => {
                 </Card>
 
 
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Cancel Interview
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="3">
-                    {/* Search an Employee component */}
-                    <Card.Body><CancelInterview></CancelInterview></Card.Body>
-                    {/* Search an Employee component */}
-                    </Accordion.Collapse>
-                </Card>
-
-
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                        Update Schedule Interview
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="4">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><UpdateInterview></UpdateInterview></Card.Body>
-                    {/* Fetch all Employee component */}
-                    </Accordion.Collapse>
-                </Card>
-
+               
 
                 </Accordion>
         </div>
