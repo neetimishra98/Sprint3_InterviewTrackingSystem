@@ -2,7 +2,7 @@
 
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
 
-const ViewInterviewMembersForHr = () => {
+const ViewListForHr = () => {
     return (
     
         <div style={{
@@ -44,4 +44,4 @@ const ViewInterviewMembersForHr = () => {
 
 
 
-export default ViewInterviewMembersForHr;
+export default ViewListForHr;

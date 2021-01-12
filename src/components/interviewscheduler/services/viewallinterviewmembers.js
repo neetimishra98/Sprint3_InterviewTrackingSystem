@@ -2,7 +2,7 @@
 
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
 
-const ViewAllInterviewMembersForTech = () => {
+const ViewAllInterviewMembers = () => {
     return (
     
         <div style={{
@@ -43,4 +43,4 @@ const ViewAllInterviewMembersForTech = () => {
 
 
 
-export default ViewAllInterviewMembersForTech;
+export default ViewAllInterviewMembers;

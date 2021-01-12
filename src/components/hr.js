@@ -5,11 +5,17 @@ import CandidateForAdmin from './candidate/CandidateForAdmin'
 import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 import SearchCandidate from './candidate/CandidateForHR';
+import InterviewSchedulerForHr from './interviewscheduler/InterviewSchedulerForHr';
+
 import UpdateInterviewForHr from "./interviewscheduler/hrservices/updatescheduleinterviewforhr";
 
 // Bootstrap
 
 import { Tab, Tabs } from 'react-bootstrap'
+import GiveHrRating from './interviewscheduler/hrservices/givehrrating';
+import ViewInterviewMembersForHr from './interviewscheduler/hrservices/viewallinterviewmembers';
+import ViewListForHr from './interviewscheduler/hrservices/viewlistforhr';
+
 
 const HRComponent = () => {
     return (
@@ -21,10 +27,8 @@ const HRComponent = () => {
                     <SearchCandidate></SearchCandidate>
 
                     <PanelMemberForHR></PanelMemberForHR>
-                    
-                    <CancelInterviewForHr></CancelInterviewForHr>
 
-                    <UpdateInterviewForHr></UpdateInterviewForHr>
+            <InterviewSchedulerForHr></InterviewSchedulerForHr>
                 </Tab>
 
             </Tabs>
