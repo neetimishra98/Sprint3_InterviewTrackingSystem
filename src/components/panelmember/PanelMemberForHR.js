@@ -2,7 +2,6 @@
 import SurrenderAsHRPanel from './hrservices/surrenderashr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
-import SurrenderAsTechPanel from './services/surrenderastechpanel'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
