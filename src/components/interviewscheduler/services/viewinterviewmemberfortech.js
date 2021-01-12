@@ -8,17 +8,17 @@ import ViewInterviewMemberForTechAction from '../../../actions/interviewschedule
 
 const ViewInterviewMemberForTech = (props) => {
 
-    var pathVaria = null;
+    var pathVar = null;
     let member = useSelector((state)=>state);
     let dispatcher = useDispatch();
     React.useEffect(()=>ViewInterviewMemberForTechAction_Function(), [])
         const ViewInterviewMemberForTechAction_Function = () => {
-            dispatcher(ViewInterviewMemberForTechAction(pathVaria));
+            dispatcher(ViewInterviewMemberForTechAction(pathVar));
         }
     
     const handleSubmit = (event) =>{ 
-        pathVaria = document.getElementById("pathVariable").value;
-        dispatcher(ViewInterviewMemberForTechAction(pathVaria));
+        pathVar = document.getElementById("pathVariable").value;
+        dispatcher(ViewInterviewMemberForTechAction(pathVar));
     }
 
 
