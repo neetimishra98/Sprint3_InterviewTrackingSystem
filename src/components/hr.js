@@ -5,6 +5,7 @@ import CandidateForAdmin from './candidate/CandidateForAdmin'
 import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 import SearchCandidate from './candidate/CandidateForHR';
+import UpdateInterviewForHr from "./interviewscheduler/hrservices/updatescheduleinterviewforhr";
 
 // Bootstrap
 
@@ -20,7 +21,10 @@ const HRComponent = () => {
                     <SearchCandidate></SearchCandidate>
 
                     <PanelMemberForHR></PanelMemberForHR>
+                    
                     <CancelInterviewForHr></CancelInterviewForHr>
+
+                    <UpdateInterviewForHr></UpdateInterviewForHr>
                 </Tab>
 
             </Tabs>
