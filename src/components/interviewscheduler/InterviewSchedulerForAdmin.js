@@ -3,6 +3,7 @@ import GiveHrRating from './services/givehrrating'
 import ViewInterviewMembersForHr from './services/viewinterviewmembersforhr'
 import ViewListForHr from './services/viewlistforhr'
 import CancelInterview from './services/cancelinterview.js'
+import UpdateInterview from "./services/updatescheduleinterview";
 import GiveTechRating from './services/givetechrating';
 import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
 import { Accordion, Card, Button } from 'react-bootstrap';
@@ -61,7 +62,7 @@ const InterviewSchedulerForAdmin = () => {
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Search an Interview
+                        Cancel Interview
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
@@ -77,12 +78,12 @@ const InterviewSchedulerForAdmin = () => {
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                        Cancel Interview
+                        Update Schedule Interview
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="4">
                     {/* Fetch all Employee component */}
-                    <Card.Body><div></div></Card.Body>
+                    <Card.Body><UpdateInterview></UpdateInterview></Card.Body>
                     {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
