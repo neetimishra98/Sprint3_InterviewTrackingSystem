@@ -1,9 +1,10 @@
+//Hr Interview Scheduler Services Component : CHECK WARNING.info FOR NOTES.....
+
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
 
-
-const ViewListForHr = () => {
+const ViewInterviewMembersForHr = () => {
     return (
-        // All Final Operations and Functions
+    
         <div style={{
             display: "flex",
             justifyContent: "center",
@@ -40,4 +41,6 @@ const ViewListForHr = () => {
     );
 }
 
-export default ViewListForHr;
+
+
+export default ViewInterviewMembersForHr;
