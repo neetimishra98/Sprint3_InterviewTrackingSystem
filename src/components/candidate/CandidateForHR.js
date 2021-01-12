@@ -1,5 +1,3 @@
-//Employee Services Accessible By The Admin....
-
 import SearchCandidate from './hrservices/viewhrcandidate'
 import ViewACandidateForTech from './services/viewatechcandidate'
 import {Accordion, Card, Button } from 'react-bootstrap'
