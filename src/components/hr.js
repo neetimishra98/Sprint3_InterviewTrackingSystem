@@ -1,11 +1,8 @@
 //Admin Services Component : CHECK WARNING.info FOR NOTES.....
 
-<<<<<<< HEAD
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
 import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
-=======
->>>>>>> e6cd90cdc5687f499942b5bcc27988d6bc5987a2
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 
