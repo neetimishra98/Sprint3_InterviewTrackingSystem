@@ -3,8 +3,7 @@ import CancelInterview from './services/cancelinterview.js'
 import UpdateInterview from "./services/updatescheduleinterview";
 import GiveTechRating from './services/givetechrating';
 import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
-import ViewAllInterviewMembersForTech from './services/viewinterviewmemberfortech';
-//import ViewAllInterviewMembersForTech from './services/viewallinterviewmembers';
+import ViewAllInterviewMembers from './services/viewallinterviewmembers';
 import { Accordion, Card, Button } from 'react-bootstrap';
 
 
@@ -54,7 +53,7 @@ const InterviewSchedulerForAdmin = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="5">
                     {/* Fetch all Employee component */}
-                    <Card.Body><ViewAllInterviewMembersForTech></ViewAllInterviewMembersForTech></Card.Body>
+                    <Card.Body><ViewAllInterviewMembers></ViewAllInterviewMembers></Card.Body>
                     {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>

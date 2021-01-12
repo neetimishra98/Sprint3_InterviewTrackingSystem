@@ -5,6 +5,7 @@ import Logo from "./logo.svg"
 import HomeComponent from './components/home';
 import AboutUsComponent from './components/about';
 import HomeHRComponent from './components/homehr';
+import HomeTechComponent from './components/hometech';
 
 //Installed Components
 import { Route, Link, Switch } from 'react-router-dom';
@@ -47,6 +48,7 @@ function App() {
       <Switch>
         <Route path='/' component={HomeComponent} exact />
         <Route path='/hr' component={HomeHRComponent} exact />
+        <Route path='/tech' component={HomeTechComponent} exact />
         <Route path='/about' component={AboutUsComponent} exact />
       </Switch>
     </div>

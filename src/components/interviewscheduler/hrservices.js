@@ -1,16 +1,16 @@
-import GiveHrRating from './hrservices/givehrrating'
-import ViewInterviewMembersForHr from './hrservices/viewallinterviewmembers'
-import ViewListForHr from './hrservices/viewlistforhr';
+import GiveHrRating from './services/givehrrating'
+import ViewInterviewMembersForHr from './services/viewinterviewmembersforhr'
+import ViewListForHr from './services/viewlistforhr'
+import CancelInterviewForHr from './hrservices/cancelinterviewforhr'
+import UpdateInterviewForHr from "./services/updatescheduleinterview";
 import { Accordion, Card, Button } from 'react-bootstrap';
-import CancelInterview from './services/cancelinterview.js'
 
 
-const InterviewSchedulerForHr = () => {
+const HRServices = () => {
     return (
         <div>
-            {/* All underlying operations from services */}
-            <Accordion>
-                <Card>
+             <Accordion>
+             <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
 
@@ -52,24 +52,20 @@ const InterviewSchedulerForHr = () => {
                     </Accordion.Collapse>
                 </Card>
 
-
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Cancel Interview
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        View All Candidates using Interview id
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="3">
-                    {/* Search an Employee component */}
-                    <Card.Body><CancelInterview></CancelInterview></Card.Body>
-                    {/* Search an Employee component */}
+                    <Accordion.Collapse eventKey="1">
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
+                    <Card.Body><CancelInterviewForHr></CancelInterviewForHr></Card.Body>
+                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
                     </Accordion.Collapse>
                 </Card>
-
-                </Accordion>
+             </Accordion>
         </div>
     );
 }
-
-export default InterviewSchedulerForHr;
-
+export default HRServices;
