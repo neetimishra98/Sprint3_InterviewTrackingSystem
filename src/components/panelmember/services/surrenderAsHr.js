@@ -1,6 +1,6 @@
 import { Form, Jumbotron, Button } from 'react-bootstrap'
 
-const SurrenderAsHR = () => {
+const SurrenderAsHRPanel = () => {
     return (
         // All Final Operations and Functions
         <div style={{
@@ -23,4 +23,4 @@ const SurrenderAsHR = () => {
     );
 }
 
-export default SurrenderAsHR;
+export default SurrenderAsHRPanel;

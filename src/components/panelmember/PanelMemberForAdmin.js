@@ -1,9 +1,8 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsHR from './services/surrenderAsHr'
+import SurrenderAsHR from './services/surrenderashr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
 import SurrenderAsTechPanel from './services/surrenderastechpanel'
-import AddPanelMember from './services/addpanelmember'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
@@ -15,19 +14,6 @@ const PanelMemberForAdmin = () => {
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Add Panel Member
-                        </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                    {/* Search an Panel component */}
-                    <Card.Body><AddPanelMember></AddPanelMember></Card.Body>
-                    {/* Search an Panel component */}
-                    </Accordion.Collapse>
-                </Card>
-
-                <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
                             Surrender As HR Panel
                         </Accordion.Toggle>
                     </Card.Header>
@@ -40,7 +26,7 @@ const PanelMemberForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
                         Surrender As Tech panel
                     </Accordion.Toggle>
                     </Card.Header>
@@ -54,7 +40,7 @@ const PanelMemberForAdmin = () => {
 
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="3">
+                        <Accordion.Toggle as={Button} variant="link" eventKey="2">
                             Show All Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
@@ -67,7 +53,7 @@ const PanelMemberForAdmin = () => {
                 
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="4">
+                        <Accordion.Toggle as={Button} variant="link" eventKey="3">
                             Delete Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
