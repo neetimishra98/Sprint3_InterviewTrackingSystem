@@ -1,17 +1,12 @@
 //Admin Services Component : CHECK WARNING.info FOR NOTES.....
 
-import EmployeeForAdmin from './employee/EmployeeForAdmin'
-import CandidateForAdmin from './candidate/CandidateForAdmin'
-import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
-//import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-
-//import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
-//import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
+import SearchCandidate from './candidate/CandidateForHR';
 
 // Bootstrap
 
 import { Tab, Tabs } from 'react-bootstrap'
+
 
 const HRComponent = () => {
     return (
@@ -20,6 +15,7 @@ const HRComponent = () => {
 
                 <Tab eventKey="PanelMember" title="HR Operations">
                     <PanelMemberForHR></PanelMemberForHR>
+                    <SearchCandidate></SearchCandidate>
                 </Tab>
             </Tabs>
         </div>
