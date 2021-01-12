@@ -24,18 +24,16 @@ const PanelMemberForAdmin = () => {
                     </Accordion.Collapse>
                 </Card>
 
-
-
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                            Show All Panel Member
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Surrender As Tech panel
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                        {/* Fetch all Employee component */}
-                        <Card.Body><ShowPanelMembers></ShowPanelMembers></Card.Body>
-                        {/* Fetch all Employee component */}
+                    {/* Surrender as tech panel component */}
+                    <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
+                    {/* Surrender as tech panel component */}
                     </Accordion.Collapse>
                 </Card>
 
@@ -43,25 +41,26 @@ const PanelMemberForAdmin = () => {
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                            Delete Panel Member
+                            Show All Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="2">
                         {/* Fetch all Employee component */}
-                        <Card.Body><DeletePanelMember></DeletePanelMember></Card.Body>
+                        <Card.Body><ShowPanelMembers></ShowPanelMembers></Card.Body>
                         {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
+                
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Surrender As tech panel
+                        <Accordion.Toggle as={Button} variant="link" eventKey="3">
+                            Delete Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
-                    {/* Surrender as tech panel component */}
-                    <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
-                    {/* Surrender as tech panel component */}
+                        {/* Fetch all Employee component */}
+                        <Card.Body><DeletePanelMember></DeletePanelMember></Card.Body>
+                        {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
