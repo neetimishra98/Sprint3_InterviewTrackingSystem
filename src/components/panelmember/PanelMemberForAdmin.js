@@ -1,5 +1,5 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsHR from './services/surrenderashr'
+import SurrenderAsHR from './services/surrenderAsHr'
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
 import SurrenderAsTechPanel from './services/surrenderastechpanel'
