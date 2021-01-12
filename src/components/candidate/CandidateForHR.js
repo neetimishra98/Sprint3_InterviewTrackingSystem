@@ -1,5 +1,4 @@
 import SearchCandidate from './hrservices/viewhrcandidate'
-import ViewACandidateForTech from './services/viewatechcandidate'
 import {Accordion, Card, Button } from 'react-bootstrap'
 //import CancelInterview from './services/cancelinterview.js'
 
