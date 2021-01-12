@@ -46,7 +46,7 @@ function App() {
       {/* Switching the content from nav operations */}
       <Switch>
         <Route path='/' component={HomeComponent} exact />
-        
+        <Route path='/hr' component={HomeHRComponent} exact />
         <Route path='/about' component={AboutUsComponent} exact />
       </Switch>
     </div>
