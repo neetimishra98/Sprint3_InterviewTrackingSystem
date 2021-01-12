@@ -1,6 +1,6 @@
 //Employee Services Accessible By The Admin....
 
-import SearchCandidate from './services/searchCandidate'
+import SearchCandidate from './services/viewhrcandidate'
 import ViewACandidateForTech from './services/viewatechcandidate'
 import {Accordion, Card, Button } from 'react-bootstrap'
 //import CancelInterview from './services/cancelinterview.js'
