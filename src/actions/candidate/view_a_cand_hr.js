@@ -1,5 +1,5 @@
 //Action for viewing a candidate for tech panel
-const ViewaCandidateForHrAction = (props) => {
+const ViewCandidateForHrAction = (props) => {
    
     return async function(dispatch){
         let error;
@@ -11,4 +11,4 @@ const ViewaCandidateForHrAction = (props) => {
     }
  }
  
- export default ViewaCandidateForHrAction;
+ export default ViewCandidateForHrAction;
