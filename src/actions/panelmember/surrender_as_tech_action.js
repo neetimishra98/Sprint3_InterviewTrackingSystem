@@ -1,12 +1,19 @@
-//Action for viewing a candidate for tech panel
-const SurrenderAsATechAction = (pathVar) => {
-   
+import axios from 'axios'
+
+const SurrenderAsATechAction = (props)=> {
     return async function(dispatch){
-        const serverResponse = await fetch(''); //await can only be used with async function....
-        const data = await serverResponse.json();
-        console.log("Server Response / Surrender As A Tech Panel  "+ data);
-        dispatch({type: 'SURRENDER_AS_A_TECH', payload: data});
+        var err = null;
+        var onLoad = 0;
+        const axios = require('axios').default;
+        const url = 'http://localhost:9091/cgits/panelmember/tech/search/'+props;
+        const serverResponse = await axios.get(url) //await can only be used with async function....
+        .then(response => dispatch({type: 'SURRENDER_AS_A_TECH', payload: response}))
+        .catch(error => console.log(err=error));
+        if(err!==null && props!=undefined){
+            console.log("No User Found");
+            dispatch({type: 'SURRENDER_AS_A_TECH', payload: null});
+        }
     }
- }
- 
- export default SurrenderAsATechAction;
+}
+
+export default SurrenderAsATechAction;
