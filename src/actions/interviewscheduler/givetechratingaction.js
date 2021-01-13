@@ -1,6 +1,23 @@
 import axios from 'axios'
 
-const GiveTechRatingAction = (props)=> {
+//const GiveTechRatingAction = (props)=> {
+
+let GiveTechRatingAction = (interviewId)=> {
+
+    return async function (dispatch) {
+        const res = await axios.get(
+                    "http://localhost:8080/cgits/interviewscheduler/tech/rating/" + interviewId, { 
+                headers: { 
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
+            console.log('Get Candidate serverResponse after giving techrating: ', res.data);
+          dispatch({type: "GIVE_TECH_RATING", payload: res.data});
+    }
+}
+
+
+    /*
     return async function(dispatch){
         var err = null;
         var onLoad = 0;
@@ -13,7 +30,7 @@ const GiveTechRatingAction = (props)=> {
             console.log("No User Found");
             dispatch({type: 'GIVE_TECH_RATING', payload: null});
         }
-    }
-}
+    }*/
+
 
 export default GiveTechRatingAction;

@@ -1,5 +1,6 @@
-const globalReducer = (state=[], action) => {
+const globalReducer = (state={interviewscheduler: []}, action) => {
     switch(action.type){
+    /*
         case 'SEARCH_EMPLOYEE': return action.payload;
         
         // JUST ADD ALL CASES OF REDUCER HERE....
@@ -14,6 +15,10 @@ const globalReducer = (state=[], action) => {
         case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
 
     }
+    */
+   case 'GIVE_TECH_RATING':
+            state.interviewscheduler = action.payload;
+            return state;
 }
-
+}
 export default globalReducer;
