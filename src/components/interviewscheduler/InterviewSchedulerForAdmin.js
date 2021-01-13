@@ -27,52 +27,16 @@ const InterviewSchedulerForAdmin = () => {
                 </Card>
 
 
-
-
-               
-
-
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="5">
-                        View All Interview Members For Tech
+                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                        Update Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="5">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><ViewAllInterviewMembers></ViewAllInterviewMembers></Card.Body>
-                    {/* Fetch all Employee component */}
-                    </Accordion.Collapse>
-                </Card>
-
-
-
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="6">
-                        View All Candidates using Interview Id
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="6">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><ViewInterviewMemberForTech></ViewInterviewMemberForTech></Card.Body>
-                    {/* Fetch all Employee component */}
-                    </Accordion.Collapse>
-                </Card>
-
-
-
-
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="7">
-                       Give Tech Rating to a Candidate
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="7">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><GiveTechRating></GiveTechRating></Card.Body>
-                    {/* Fetch all Employee component */}
+                    <Accordion.Collapse eventKey="2">
+                    {/* Search an Employee component */}
+                    <Card.Body><UpdateInterview></UpdateInterview></Card.Body>
+                    {/* Search an Employee component */}
                     </Accordion.Collapse>
                 </Card>
             </Accordion>

@@ -26,7 +26,7 @@ const ViewInterviewMembersForHr = (props) => {
         interviewmemberList = [];
         console.log("Set employeeList to blank array");
     }
-
+ 
     return (
     
         <div style={{
@@ -71,13 +71,12 @@ const ViewInterviewMembersForHr = (props) => {
 
 function renderTableData(interviewmemberList) {
     console.log("interviewmemberList: ", interviewmemberList);
-    return interviewmemberList.map((interviewmembers,index) => {
+    return interviewmemberList.map((interviewmember,index) => {
       //  const deptName = employee.department.name;
-       const {interviewid, candidateid, panelid, location,date,start_time,end_time,hrrating,finalstatus} = interviewmembers //destructuring
+       const { interviewid, candidateid, panelid, location,date,start_time,end_time,hrrating,finalstatus} = interviewmember//destructuring
        return (
           <tr key={interviewid}>
              <td>{interviewid}</td>
-    
              <td>{candidateid}</td>
              <td>{panelid}</td>
              <td>{location}</td>
