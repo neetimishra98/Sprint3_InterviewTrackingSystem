@@ -1,6 +1,6 @@
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
 
-const CancelInterviewForHr = () => {
+const HRCancelInterview = () => {
     return (
         // All Final Operations and Functions
         <div style={{
@@ -8,7 +8,7 @@ const CancelInterviewForHr = () => {
             justifyContent: "center",
             alignItems: "center"
           }}>
-            <Jumbotron style={{width: 700}}>
+            <Jumbotron style={{width: 500}}>
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Enter Interview ID to Cancel</Form.Label>
@@ -30,4 +30,4 @@ const CancelInterviewForHr = () => {
     );
 }
 
-export default CancelInterviewForHr;
+export default HRCancelInterview;
