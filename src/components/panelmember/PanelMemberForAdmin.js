@@ -10,6 +10,18 @@ const PanelMemberForAdmin = () => {
         <div>
             {/* All underlying operations from services */}
             <Accordion>
+				<Card>
+                    <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                            Show All Panel Member
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        {/* Fetch all Employee component */}
+                        <Card.Body><AddPanelMember></AddPanelMember></Card.Body>
+                        {/* Fetch all Employee component */}
+                    </Accordion.Collapse>
+                </Card>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="1">
