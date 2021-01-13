@@ -13,6 +13,8 @@ import globalReducer from './reducers/globalreducer';
 let Store = createStore(globalReducer, 
   applyMiddleware(ReduxThunk));
 
+
+  
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>

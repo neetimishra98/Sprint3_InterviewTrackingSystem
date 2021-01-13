@@ -29,7 +29,7 @@ const InterviewSchedulerForHr = () => {
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                        View All Candidates using Interview id
+                    View All HrInterview Members
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
@@ -43,7 +43,7 @@ const InterviewSchedulerForHr = () => {
                 <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                        View All HrInterview Members
+                View All Candidates using Interview id      
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="2">

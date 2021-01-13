@@ -1,8 +1,32 @@
 //Hr Interview Scheduler Services Component : CHECK WARNING.info FOR NOTES.....
-
+import React from 'react';
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import ShowInterviewMemberAction from '../../../actions/interviewscheduler/showinterviewmembers_action';
 
-const ViewInterviewMembersForHr = () => {
+
+const ViewInterviewMembersForHr = (props) => {
+
+
+    let interviewmemberList = useSelector(state => state);
+
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        InterviewmemberList()
+      }, []);
+    
+      const InterviewmemberList = () => {
+        dispatch(ShowInterviewMemberAction())
+      }
+
+
+    console.log("interviewmemberList: ", interviewmemberList);
+    if(!Array.isArray(interviewmemberList)) {
+        interviewmemberList = [];
+        console.log("Set employeeList to blank array");
+    }
+
     return (
     
         <div style={{
@@ -17,22 +41,25 @@ const ViewInterviewMembersForHr = () => {
                         <br></br>
                         <br></br>
                         <Button variant="dark" type="submit" call>
-                            Search
+                            SHOW
                         </Button>
                     </Form.Group>
                     <Table striped bordered hover size="sm">
                         <thead>
-                            <th>Interview ID</th>
-                            <th>Date</th>
-                            <th>End_time</th>
-                            <th>Finalstatus</th>
-                            <th>HrRating</th>
-                            <th>Location</th>
-                            <th>Start_time</th>
-                            <th>Candidateid</th>
+                            <th>interviewid</th>
+                            <th>candidateid</th>
                             <th>panelid</th>
+                            <th>location</th>
+                            <th>date</th>
+                            <th>start_time</th>
+                            <th>end_time</th>
+                            <th>hrrating</th>
+                            <th>finalstatus</th>
                         </thead>
                         <tbody id="table_content">
+
+                        {renderTableData(interviewmemberList)}
+                        
                         </tbody>
                     </Table>
                 </Form>
@@ -41,6 +68,29 @@ const ViewInterviewMembersForHr = () => {
     );
 }
 
+
+function renderTableData(interviewmemberList) {
+    console.log("interviewmemberList: ", interviewmemberList);
+    return interviewmemberList.map((interviewmembers,index) => {
+      //  const deptName = employee.department.name;
+       const {interviewid, candidateid, panelid, location,date,start_time,end_time,hrrating,finalstatus} = interviewmembers //destructuring
+       return (
+          <tr key={interviewid}>
+             <td>{interviewid}</td>
+    
+             <td>{candidateid}</td>
+             <td>{panelid}</td>
+             <td>{location}</td>
+             <td>{date}</td>
+             <td>{start_time}</td>
+             <td>{end_time}</td>
+             <td>{hrrating}</td>
+             <td>{finalstatus}</td>
+            
+          </tr>
+       )
+    })
+ };
 
 
 export default ViewInterviewMembersForHr;
