@@ -41,6 +41,7 @@ const ShowEmployeeComponent = (props)=>{
 
     function renderData(employeeList) {   
         console.log("employeeList: ", employeeList);
+        if(employeeList!==undefined){
         return employeeList.data.map((employee, index) => {
             const { employeeid, name } = employee //destructuring
             return (
@@ -50,6 +51,7 @@ const ShowEmployeeComponent = (props)=>{
               </tr>
            )   
         })
+        }
      };
 }
 
