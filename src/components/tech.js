@@ -2,9 +2,9 @@
 
 //import CancelInterview from './services/cancelinterview.js'
 //import UpdateInterview from "./services/updatescheduleinterview";
-import GiveTechRating from './interviewscheduler/services/givetechrating';
-import ViewInterviewMemberForTech from './interviewscheduler/services/viewinterviewmemberfortech';
-import ViewAllInterviewMembersForTech from './interviewscheduler/services/viewallinterviewmembers';
+//import GiveTechRating from './interviewscheduler/services/givetechrating';
+//import ViewInterviewMemberForTech from './interviewscheduler/services/viewinterviewmemberfortech';
+//import ViewAllInterviewMembersForTech from './interviewscheduler/services/viewallinterviewmembers';
 import { Accordion, Card, Button } from 'react-bootstrap';
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 

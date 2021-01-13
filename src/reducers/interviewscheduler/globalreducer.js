@@ -24,8 +24,7 @@ const globalReducer = (state={interviewmembers: []}, action) => {
         //Case to view interview member for tech
         case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
 
-        //case to give techrating
-        case 'GIVE_TECH_RATING' : return action.payload;
+      
     }
 
 }
