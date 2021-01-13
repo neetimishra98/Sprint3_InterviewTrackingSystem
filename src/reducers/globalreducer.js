@@ -13,6 +13,9 @@ const globalReducer = (state=[], action) => {
         //case to view all members
         case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
 
+        //case to cancel the Interview
+        case 'CANCEL_INTERVIEW': return action.payload;
+
     }
 }
 
