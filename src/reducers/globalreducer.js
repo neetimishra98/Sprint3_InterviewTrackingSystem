@@ -11,8 +11,6 @@ const globalReducer = (state=[], action) => {
         //default:
            // return [];
 
-    }
-
+        }
 }
-
 export default globalReducer;
