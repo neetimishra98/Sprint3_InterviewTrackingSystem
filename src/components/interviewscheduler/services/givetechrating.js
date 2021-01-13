@@ -1,23 +1,26 @@
-import { Form, Table, Jumbotron, Button, Modal } from 'react-bootstrap'
+import { render } from '@testing-library/react';
 import React, { useState } from 'react'
+import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import GiveTechRatingAction from '../../../actions/interviewscheduler/givetechratingaction'
 
-const GiveTechRating = (interviewId) => {
+const GiveTechRating = (props) => {
 
-    var pathVar = null;
-    let interviewscheduler = useSelector((state)=>state);
+    var pathVariable = null;
+    let candidate = useSelector((state)=>state);
     let dispatcher = useDispatch();
     React.useEffect(()=>GiveTechRatingAction_Function(), [])
-        const GiveTechRatingAction_Function = () => {
-            dispatcher(GiveTechRatingAction(pathVar));
+    const GiveTechRatingAction_Function = () => {
+            dispatcher(GiveTechRatingAction(pathVariable));
         }
     
     const handleSubmit = (event) =>{ 
-        pathVar = document.getElementById("pathVariable").value;
-        dispatcher(GiveTechRatingAction(pathVar));
+        pathVariable = document.getElementById("interviewid").value;
+        dispatcher(GiveTechRatingAction(pathVariable));
+        renderData(candidate);
     }
+
 
     return (
         // All Final Operations and Functions
@@ -30,21 +33,46 @@ const GiveTechRating = (interviewId) => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Give TechRating to a Candidate by Interviewid</Form.Label>
-                        <Form.Control type="text" placeholder="Interview ID" id="pathVariable"/>
-                    </Form.Group>
-                    <Table striped bordered hover size="sm">
-                        <thead>
-                            <th>Interview ID</th>
-                            
-                        </thead>
-                        <tbody id="table_content">
-                        </tbody>
-                    </Table>
+                        <Form.Control id="interviewid" type="text" placeholder="Interview ID" />
+                        </Form.Group>
                     <Button variant="dark" type="button" call onClick={handleSubmit}>
                         Search
                     </Button>
-                    <Table striped bordered hover size="sm">
-                        <thead>
+                    <hr></hr>
+                        {renderData(candidate)}
+                </Form>
+            </Jumbotron>
+        </div>
+    );
+
+    //Alert
+    function AlertMemberNotFound() {
+        const [show, setShow] = useState(true);
+        console.log(show, setShow);
+        if (show) {
+          return (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>Interview Not Found</Alert.Heading>
+              <p>
+              Candidate with the mentioned id was not found. Maybe you entered wrong id. Please check once!
+              </p>
+            </Alert>
+          );
+        }
+        else{
+            return (
+                <div></div>
+            );
+        }
+
+    }
+    function renderData(candidate) {   
+        console.log("candidate dispatcher object returned from the server : ", candidate);
+        if(candidate!==undefined && candidate!==null){
+            return(
+                <Table striped bordered hover size="sm">
+                    <thead>
+                        <tr>
                             <th>Interview ID</th>
                             <th>Location</th>
                             <th>Date</th>
@@ -52,35 +80,29 @@ const GiveTechRating = (interviewId) => {
                             <th>End Time</th>
                             <th>TechRating</th>
                             <th>Final Status</th>
-                            <th>Candidate Id</th>
-                            <th>Panel Id</th>
+                            </tr>
                         </thead>
-                        <tbody id="table_content">
-                        {renderData(interviewscheduler)}
+                        <tbody>
+                        <tr>
+                            <td>{candidate.data.interviewid}</td>
+                            <td>{candidate.data.location}</td>
+                            <td>{candidate.data.date}</td>
+                            <td>{candidate.data.start_time}</td>
+                            <td>{candidate.data.end_time}</td>
+                            <td>{candidate.data.techrating}</td>
+                            <td>{candidate.data.finalstatus}</td>
+                            
+                        </tr>
                         </tbody>
-                    </Table>
-                </Form>
-            </Jumbotron>
-        </div>
-    );
-    function renderData(interviewscheduler) {   
-        console.log("interview member dispatcher object returned from the server : ", interviewscheduler);
-        if(interviewscheduler!==undefined){
-            return(
-                <tr>
-                    <td>{interviewscheduler.data.interviewid}</td>
-                    <td>{interviewscheduler.data.location}</td>
-                    <td>{interviewscheduler.data.date}</td>
-                    <td>{interviewscheduler.data.start_time}</td>
-                    <td>{interviewscheduler.data.end_time}</td>
-                    <td>{interviewscheduler.data.techrating}</td>
-                    <td>{interviewscheduler.data.finalstatus}</td>
-                    <td>{interviewscheduler.data.candidateid}</td>
-                    <td>{interviewscheduler.data.candidateid}</td>
-                </tr>
+                </Table>
             );
         }
+
+        if(candidate!==undefined && candidate===null){
+            console.log("called the alert");
+            return(<AlertMemberNotFound show="true"/>);
+        }
     }        
-}
+    }
 
 export default GiveTechRating;
