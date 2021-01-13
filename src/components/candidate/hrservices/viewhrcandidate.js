@@ -30,6 +30,10 @@ const ViewCandidate = () => {
                         <Form.Label>Search by valid name/id</Form.Label>
                         <Form.Control type="text" placeholder="Name or Candidate ID" id="pathVariable"/>
                     </Form.Group>
+                    <Button variant="dark" type="submit"  call onClick={handleSubmit}>
+                        Search
+                    </Button>
+                    <hr></hr>
                     <Table striped bordered hover size="sm">
                         <thead>
                             <th>Candidate ID</th>
@@ -41,14 +45,12 @@ const ViewCandidate = () => {
                             <th>Primary Skills</th>
                             <th>Secondary Skills</th>
                             <th>Notice Period</th>
+                            <th>Final Status</th>
                         </thead>
                         <tbody id="table_content">
                             {renderData(candidate)}
                         </tbody>
                     </Table>
-                    <Button variant="dark" type="submit" call>
-                        Search
-                    </Button>
                 </Form>
             </Jumbotron>
         </div>

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState } from 'react'
-import { Form, Table, Jumbotron, Button, Modal } from 'react-bootstrap'
+import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import SearchEmployeeAction from '../../../actions/employee/searchemployee_action'
@@ -12,9 +12,9 @@ const SearchEmployee = (props) => {
     let employee = useSelector((state)=>state);
     let dispatcher = useDispatch();
     React.useEffect(()=>SearchEmployeeAction_Function(), [])
-        const SearchEmployeeAction_Function = () => {
+    const SearchEmployeeAction_Function = () => {
             dispatcher(SearchEmployeeAction(pathVar));
-        }
+    }
     
     const handleSubmit = (event) =>{ 
         pathVar = document.getElementById("pathVariable").value;
@@ -45,29 +45,28 @@ const SearchEmployee = (props) => {
         </div>
     );
 
-    //MODAL
-    function Box() {
+    //ALERT
+    function AlertEmployeeNotFound() {
         const [show, setShow] = useState(true);
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-      
-        return (
-          <>
-      
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Employee Not Found</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>Entered incorrect or blank name/id</Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  OK
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </>
-        );
-      }
+        console.log(show, setShow);
+        if (show) {
+          return (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>Employee Not Found</Alert.Heading>
+              <p>
+                Employee with the mentioned name or id was not found. Maybe you entered wrong name/id. Please check once!
+              </p>
+            </Alert>
+          );
+        }
+        else{
+            return (
+                <div></div>
+            );
+        }
+        
+        
+    }
 
     function renderData(employee) {   
         console.log("employee dispatcher object returned from the server : ", employee);
@@ -90,7 +89,8 @@ const SearchEmployee = (props) => {
             );
         }
         if(employee!==undefined && employee===null){
-            return(<Box/>);
+            console.log("called the alert");
+            return(<AlertEmployeeNotFound show="true"/>);
         }
     }        
 }
