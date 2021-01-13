@@ -1,6 +1,7 @@
 //Employee Services Accessible By The Admin....
 
 import SearchEmployee from './services/searchemployee'
+import ShowEmployeeComponent from './services/showemployees'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
@@ -29,7 +30,7 @@ const EmployeeForAdmin = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
                     {/* Fetch all Employee component */}
-                    <Card.Body><div></div></Card.Body>
+                    <Card.Body><ShowEmployeeComponent></ShowEmployeeComponent></Card.Body>
                     {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
