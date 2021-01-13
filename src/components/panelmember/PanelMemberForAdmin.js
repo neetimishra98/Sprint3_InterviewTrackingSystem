@@ -2,7 +2,7 @@
 
 import ShowPanelMembers from './services/showpanelmember'
 import DeletePanelMember from './services/deletepanelmember'
-
+import AddPanelMember from './services/addpanelmember'
 import { Accordion, Card, Button } from 'react-bootstrap'
 
 const PanelMemberForAdmin = () => {
