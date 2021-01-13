@@ -1,64 +1,42 @@
 //Interview Services Accessible By The Admin....
-import techInterviewScheduleAdmin from '../interviewscheduler/techInterviewScheduleAdmin';
-import hrInterviewScheduleAdmin from '../interviewscheduler/hrInterviewScheduleAdmin';
-
-import HRShareandschedule from './adminhrServices/hrshareandschedule.js';
-import HRCancelInterview from './adminhrServices/hrcancelinterview.js'
-import HRUpdateInterview from "./adminhrServices/hrupdatescheduleinterview";
-
-import TechShareandschedule from './adminTechServices/techshareandschedule.js';
-import TechCancelInterview from './adminTechServices/techcancelinterview.js'
-import TechUpdateInterview from "./adminTechServices/techupdatescheduleinterview";
-
-
-
-
-
+import CancelInterview from './services/cancelinterview.js'
+import UpdateInterview from "./services/updatescheduleinterview";
+import GiveTechRating from './services/givetechrating';
+import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
+import ViewAllInterviewMembers from './services/viewallinterviewmembers';
 import { Accordion, Card, Button } from 'react-bootstrap';
-
-
 
 const InterviewSchedulerForAdmin = () => {
     return (
         <div>
             {/* All underlying operations from services */}
+
             <Accordion>
-            <Card>
+               
+                <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Schedule technical Interview
+                        Cancel Interview
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
-                  
-                    <Card.Body><techInterviewScheduleAdmin>
-                    <TechShareandschedule></TechShareandschedule>
-
-                    <TechUpdateInterview></TechUpdateInterview>
-
-                    <TechCancelInterview></TechCancelInterview>
-
-                    </techInterviewScheduleAdmin></Card.Body>
-                   
+                    {/* Search an Employee component */}
+                    <Card.Body><CancelInterview></CancelInterview></Card.Body>
+                    {/* Search an Employee component */}
                     </Accordion.Collapse>
                 </Card>
+
+
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                    Schedule HR Interview
+                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                        Update Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="4">
-                  
-                    <Card.Body><hrInterviewScheduleAdmin>
-                    <HRShareandschedule></HRShareandschedule>
-                    
-                    <HRUpdateInterview></HRUpdateInterview>
-
-                    <HRCancelInterview></HRCancelInterview>
-
-                    </hrInterviewScheduleAdmin></Card.Body>
-                   
+                    <Accordion.Collapse eventKey="2">
+                    {/* Search an Employee component */}
+                    <Card.Body><UpdateInterview></UpdateInterview></Card.Body>
+                    {/* Search an Employee component */}
                     </Accordion.Collapse>
                 </Card>
             </Accordion>

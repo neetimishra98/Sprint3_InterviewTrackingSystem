@@ -1,6 +1,6 @@
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
 
-const TechCancelInterview = () => {
+const UpdateInterview = () => {
     return (
         // All Final Operations and Functions
         <div style={{
@@ -8,10 +8,10 @@ const TechCancelInterview = () => {
             justifyContent: "center",
             alignItems: "center"
           }}>
-            <Jumbotron style={{width: 500}}>
+            <Jumbotron style={{width: 700}}>
                 <Form>
                     <Form.Group controlId="formGroupText">
-                        <Form.Label>Enter Interview ID to Cancel</Form.Label>
+                        <Form.Label>Enter Interview ID to Update</Form.Label>
                         <Form.Control type="text" placeholder="Interview Id" id="searchParameter"/>
                     </Form.Group>
                     <Table striped bordered hover size="sm">
@@ -22,7 +22,7 @@ const TechCancelInterview = () => {
                         </tbody>
                     </Table>
                     <Button variant="dark" type="submit" call>
-                        Cancel
+                        Update
                     </Button>
                 </Form>
             </Jumbotron>
@@ -30,4 +30,4 @@ const TechCancelInterview = () => {
     );
 }
 
-export default TechCancelInterview;
+export default UpdateInterview;
