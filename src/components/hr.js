@@ -1,7 +1,5 @@
 //Admin Services Component : CHECK WARNING.info FOR NOTES.....
 
-import EmployeeForAdmin from './employee/EmployeeForAdmin'
-import CandidateForAdmin from './candidate/CandidateForAdmin'
 //import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 import SearchCandidate from './candidate/CandidateForHR';
@@ -24,9 +22,9 @@ const HRComponent = () => {
 
                 <Tab eventKey="PanelMember" title="HR">
 
-                    {/*<SearchCandidate></SearchCandidate>*/}
+                    <SearchCandidate></SearchCandidate>
                     <PanelMemberForHR></PanelMemberForHR>
-                    {/*<InterviewSchedulerForHr></InterviewSchedulerForHr>*/}
+                    <InterviewSchedulerForHr></InterviewSchedulerForHr>
                 </Tab>
 
             </Tabs>

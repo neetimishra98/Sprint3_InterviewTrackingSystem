@@ -1,19 +1,18 @@
 const globalReducer = (state=[], action) => {
     switch(action.type){
         case 'SEARCH_EMPLOYEE': return action.payload;
-        
-        // JUST ADD ALL CASES OF REDUCER HERE....
 
-        //CASE TO SHOW PANEL MEMBERS
-        case 'SHOW_PANELMEMBER': return action.payload;
+        //CASE TO VIEW CANDIDATE FOR HR
+        case 'VIEW_A_CANDIDATE_FOR_HR': return action.payload;
 
-        //case to give techrating
-        case 'GIVE_TECH_RATING' : return action.payload;
+        //CASE TO SURRENDER AS HR
+        case 'SURRENDER_AS_A_HR': return action.payload;
 
-        //case to view all members
-        case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
+        //default:
+           // return [];
 
     }
+
 }
 
 export default globalReducer;
