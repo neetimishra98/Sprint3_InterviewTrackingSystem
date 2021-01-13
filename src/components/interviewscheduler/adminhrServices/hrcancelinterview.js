@@ -14,6 +14,8 @@ const HRCancelInterview = () => {
                         <Form.Label>Enter Interview ID to Cancel</Form.Label>
                         <Form.Control type="text" placeholder="Interview Id" id="searchParameter"/>
                     </Form.Group>
+
+                    
                     <Table striped bordered hover size="sm">
                         <thead>
                            
