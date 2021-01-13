@@ -5,28 +5,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import ShowInterviewMemberAction from '../../../actions/interviewscheduler/showinterviewmembers_action';
 
 
-const ViewInterviewMembersForHr = (props) => {
 
+const ShowInterviewMember = (props) => {
 
-    let interviewmemberList = useSelector(state => state);
+    var pathVaria = null;
+    let interviewmember = useSelector((state)=>state);
+    let dispatcher = useDispatch();
+    React.useEffect(()=>ShowInterviewMemberAction_Function(), [])
+        const ShowInterviewMemberAction_Function = () => {
+            dispatcher(ShowInterviewMemberAction(pathVaria));
+        }
 
-    const dispatch = useDispatch();
-
-    React.useEffect(() => {
-        InterviewmemberList()
-      }, []);
+        const handleSubmit = (event) =>{ 
+          pathVaria = document.getElementById("vare").value;
+            dispatcher(ShowInterviewMemberAction(pathVaria));
+            renderData(interviewmember);
+        }
     
-      const InterviewmemberList = () => {
-        dispatch(ShowInterviewMemberAction())
-      }
 
-
-    console.log("interviewmemberList: ", interviewmemberList);
-    if(!Array.isArray(interviewmemberList)) {
-        interviewmemberList = [];
-        console.log("Set employeeList to blank array");
-    }
- 
     return (
     
         <div style={{
@@ -40,7 +36,7 @@ const ViewInterviewMembersForHr = (props) => {
                         <Form.Label> View List of Interview Members</Form.Label>
                         <br></br>
                         <br></br>
-                        <Button variant="dark" type="submit" call>
+                        <Button variant="dark" id = "vare" type="button" call onClick={handleSubmit} >
                             SHOW
                         </Button>
                     </Form.Group>
@@ -58,38 +54,33 @@ const ViewInterviewMembersForHr = (props) => {
                         </thead>
                         <tbody id="table_content">
 
-                        {renderTableData(interviewmemberList)}
-                        
+                        {renderData(interviewmember)}
                         </tbody>
                     </Table>
                 </Form>
             </Jumbotron>
         </div>
     );
+
+function renderData(interviewmember) {
+    console.log("interviewmember dispatcher object returned from the server : ", interviewmember);
+    if(interviewmember!==undefined){
+    return(
+                <tr>
+                    <td>{interviewmember.data.interviewid}</td>
+                    <td>{interviewmember.data.candidateid}</td>
+                    <td>{interviewmember.data.panelid}</td>
+                    <td>{interviewmember.data.location}</td>
+                    <td>{interviewmember.data.date}</td>
+                    <td>{interviewmember.data.start_time}</td>
+                    <td>{interviewmember.data.end_time}</td>
+                    <td>{interviewmember.data.hrrating}</td>
+                    <td>{interviewmember.data.finalstatus}</td>
+                    
+                </tr>
+    );
+
+    }
 }
-
-
-function renderTableData(interviewmemberList) {
-    console.log("interviewmemberList: ", interviewmemberList);
-    return interviewmemberList.map((interviewmember,index) => {
-      //  const deptName = employee.department.name;
-       const { interviewid, candidateid, panelid, location,date,start_time,end_time,hrrating,finalstatus} = interviewmember//destructuring
-       return (
-          <tr key={interviewid}>
-             <td>{interviewid}</td>
-             <td>{candidateid}</td>
-             <td>{panelid}</td>
-             <td>{location}</td>
-             <td>{date}</td>
-             <td>{start_time}</td>
-             <td>{end_time}</td>
-             <td>{hrrating}</td>
-             <td>{finalstatus}</td>
-            
-          </tr>
-       )
-    })
- };
-
-
-export default ViewInterviewMembersForHr;
+}
+export default ShowInterviewMember;
