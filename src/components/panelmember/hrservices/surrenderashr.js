@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState } from 'react'
-import { Form, Table, Jumbotron, Button, Modal } from 'react-bootstrap'
+import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import SurrenderAsHRAction from '../../../actions/panelmember/surrender_as_hr';
@@ -68,6 +68,7 @@ const SurrenderAsHRPanel = (props) => {
     function renderData(panelMember) {   
         console.log("panel member dispatcher object returned from the server : ", panelMember);
         if(panelMember!==undefined && panelMember!==null){
+            console.log("Surrendered successfully!");
             return(
                 <Table striped bordered hover size="sm">
                     <thead>
