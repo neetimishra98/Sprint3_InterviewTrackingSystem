@@ -13,7 +13,7 @@ const PanelMemberForAdmin = () => {
 				<Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Show All Panel Member
+                            Add Panel Member
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
