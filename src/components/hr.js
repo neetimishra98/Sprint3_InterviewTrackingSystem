@@ -2,12 +2,12 @@
 
 import EmployeeForAdmin from './employee/EmployeeForAdmin'
 import CandidateForAdmin from './candidate/CandidateForAdmin'
-import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
+//import CancelInterviewForHr from './interviewscheduler/hrservices/cancelinterviewforhr';
 import PanelMemberForHR from './panelmember/PanelMemberForHR'
 import SearchCandidate from './candidate/CandidateForHR';
 import InterviewSchedulerForHr from './interviewscheduler/InterviewSchedulerForHr';
 
-import UpdateInterviewForHr from "./interviewscheduler/hrservices/updatescheduleinterviewforhr";
+//import UpdateInterviewForHr from "./interviewscheduler/hrservices/updatescheduleinterviewforhr";
 
 // Bootstrap
 

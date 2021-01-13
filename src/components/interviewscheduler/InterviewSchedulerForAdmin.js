@@ -1,80 +1,94 @@
 //Interview Services Accessible By The Admin....
-import CancelInterview from './services/cancelinterview.js'
-import UpdateInterview from "./services/updatescheduleinterview";
-import GiveTechRating from './services/givetechrating';
-import ViewInterviewMemberForTech from './services/viewinterviewmemberfortech';
-import ViewAllInterviewMembers from './services/viewallinterviewmembers';
+import techInterviewScheduleAdmin from '../interviewscheduler/techInterviewScheduleAdmin';
+import hrInterviewScheduleAdmin from '../interviewscheduler/hrInterviewScheduleAdmin';
+
+import HRShareandschedule from './adminhrServices/hrshareandschedule.js';
+import HRCancelInterview from './adminhrServices/hrcancelinterview.js'
+import HRUpdateInterview from "./adminhrServices/hrupdatescheduleinterview";
+
+import TechShareandschedule from './adminTechServices/techshareandschedule.js';
+import TechCancelInterview from './adminTechServices/techcancelinterview.js'
+import TechUpdateInterview from "./adminTechServices/techupdatescheduleinterview";
+
+
+
+
+
 import { Accordion, Card, Button } from 'react-bootstrap';
+
+
 
 const InterviewSchedulerForAdmin = () => {
     return (
         <div>
             {/* All underlying operations from services */}
-
             <Accordion>
-               
-                <Card>
+            <Card>
                     <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Cancel Interview
+                        Schedule technical Interview
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
-                    {/* Search an Employee component */}
-                    <Card.Body><CancelInterview></CancelInterview></Card.Body>
-                    {/* Search an Employee component */}
-                    </Accordion.Collapse>
-                </Card>
+                  
+                    <Card.Body><techInterviewScheduleAdmin>
+                    <TechShareandschedule></TechShareandschedule>
+                    
+                    
 
-
-
-
-               
-
-
-                <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="5">
-                        View All Interview Members For Tech
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Update technical Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="5">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><ViewAllInterviewMembers></ViewAllInterviewMembers></Card.Body>
-                    {/* Fetch all Employee component */}
-                    </Accordion.Collapse>
-                </Card>
+                    
+                    <TechUpdateInterview></TechUpdateInterview>
 
-
-
-                <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="6">
-                        View All Candidates using Interview Id
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Cancel technical Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="6">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><ViewInterviewMemberForTech></ViewInterviewMemberForTech></Card.Body>
-                    {/* Fetch all Employee component */}
+
+                    <TechCancelInterview></TechCancelInterview>
+
+                    </techInterviewScheduleAdmin></Card.Body>
+                   
                     </Accordion.Collapse>
                 </Card>
-
-
-
-
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="7">
-                       Give Tech Rating to a Candidate
+                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
+                    Schedule HR Interview
                     </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="7">
-                    {/* Fetch all Employee component */}
-                    <Card.Body><GiveTechRating></GiveTechRating></Card.Body>
-                    {/* Fetch all Employee component */}
+                    <Accordion.Collapse eventKey="4">
+                  
+                    <Card.Body><hrInterviewScheduleAdmin>
+                    <HRShareandschedule></HRShareandschedule>
+
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Update HR Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    
+                    <HRUpdateInterview></HRUpdateInterview>
+
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Cancel HR Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
+
+                    <HRCancelInterview></HRCancelInterview>
+
+                    </hrInterviewScheduleAdmin></Card.Body>
+                   
                     </Accordion.Collapse>
                 </Card>
+
+                
             </Accordion>
         </div>
     );

@@ -1,5 +1,6 @@
-import React from 'react'
-import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
+import { render } from '@testing-library/react';
+import React, { useState } from 'react'
+import { Form, Table, Jumbotron, Button, Modal } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import SearchEmployeeAction from '../../../actions/employee/searchemployee_action'
@@ -18,6 +19,7 @@ const SearchEmployee = (props) => {
     const handleSubmit = (event) =>{ 
         pathVar = document.getElementById("pathVariable").value;
         dispatcher(SearchEmployeeAction(pathVar));
+        renderData(employee);
     }
 
     return (
@@ -37,31 +39,58 @@ const SearchEmployee = (props) => {
                         Search
                     </Button>
                     <hr></hr>
-                    <Table striped bordered hover size="sm">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table_content">
-                            {renderData(employee)}
-                        </tbody>
-                    </Table>    
+                        {renderData(employee)}
                 </Form>
             </Jumbotron>
         </div>
     );
 
+    //MODAL
+    function Box() {
+        const [show, setShow] = useState(true);
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+      
+        return (
+          <>
+      
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Employee Not Found</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>Entered incorrect or blank name/id</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  OK
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        );
+      }
+
     function renderData(employee) {   
         console.log("employee dispatcher object returned from the server : ", employee);
-        if(employee!==undefined){
+        if(employee!==undefined && employee!==null){
             return(
-                <tr>
-                    <td>{employee.data.employeeid}</td>
-                    <td>{employee.data.name}</td>
-                </tr>
+                <Table striped bordered hover size="sm">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{employee.data.employeeid}</td>
+                            <td>{employee.data.name}</td>
+                        </tr>
+                    </tbody>
+                </Table>
             );
+        }
+        if(employee!==undefined && employee===null){
+            return(<Box/>);
         }
     }        
 }
