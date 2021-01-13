@@ -11,13 +11,9 @@ const globalReducer = (state=[], action) => {
         //default:
            // return [];
 
-<<<<<<< HEAD
         //case to cancel the Interview
         case 'CANCEL_INTERVIEW': return action.payload;
 
     }
-=======
-        }
->>>>>>> 365d39571a3e7471dc4c8e30deddb15a30692b3b
 }
 export default globalReducer;
