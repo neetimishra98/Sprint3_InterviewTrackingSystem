@@ -33,8 +33,22 @@ const InterviewSchedulerForAdmin = () => {
                   
                     <Card.Body><techInterviewScheduleAdmin>
                     <TechShareandschedule></TechShareandschedule>
+                    
+                    
 
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Update technical Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    
                     <TechUpdateInterview></TechUpdateInterview>
+
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Cancel technical Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
 
                     <TechCancelInterview></TechCancelInterview>
 
@@ -52,8 +66,20 @@ const InterviewSchedulerForAdmin = () => {
                   
                     <Card.Body><hrInterviewScheduleAdmin>
                     <HRShareandschedule></HRShareandschedule>
+
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        Update HR Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
                     
                     <HRUpdateInterview></HRUpdateInterview>
+
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Cancel HR Interview
+                    </Accordion.Toggle>
+                    </Card.Header>
 
                     <HRCancelInterview></HRCancelInterview>
 
@@ -61,6 +87,8 @@ const InterviewSchedulerForAdmin = () => {
                    
                     </Accordion.Collapse>
                 </Card>
+
+                
             </Accordion>
         </div>
     );
