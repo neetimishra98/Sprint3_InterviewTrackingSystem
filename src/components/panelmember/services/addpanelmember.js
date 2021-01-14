@@ -18,7 +18,7 @@ const AddPanelMember = () => {
     let employee = useSelector((state)=>state);
     let dispatcher = useDispatch();
     
-    //ADD PANEL MEMBER WITH REACT USE EFFECT
+    //ADD PANEL MEMBER WITH REACT USE EFFECT        
     React.useEffect(()=>AddPanelMemberAction_Function(), [])
         const AddPanelMemberAction_Function = () => {
             dispatcher(AddPanelMemberAction(post_json, name));
