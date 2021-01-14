@@ -25,13 +25,12 @@ const globalReducer = (state= { panelmember: [], candidate: [] }, action) => {
         case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
 
         //CASE TO SURRENDER AS HR
-<<<<<<< HEAD
         case 'SURRENDER_AS_HR': 
         //state.panelmember = action.payload;
         //console.log('SURRENDER_AS_HR', state.panelmember);
         //return state;
         return action.payload;
-=======
+
         case 'SURRENDER_AS_HR': return action.payload;
 
 
@@ -45,6 +44,6 @@ const globalReducer = (state= { panelmember: [], candidate: [] }, action) => {
         case 'UPDATE_INTERVIEW': return action.payload;
 
     }
->>>>>>> 318886e907abef18e0079b85dcc17322515c626b
+
 }
 export default globalReducer;

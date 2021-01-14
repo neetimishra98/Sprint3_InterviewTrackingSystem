@@ -4,11 +4,12 @@ import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import GiveTechRatingAction from '../../../actions/interviewscheduler/givetechratingaction'
+import TechReducer from '../../../reducers/techreducer'
 
 const GiveTechRating = (props) => {
 
     var pathVariable = null;
-    let candidate = useSelector((state)=>state);
+    let candidate = useSelector((state)=>state.TechReducer);
     let dispatcher = useDispatch();
     React.useEffect(()=>GiveTechRatingAction_Function(), [])
     const GiveTechRatingAction_Function = () => {

@@ -1,5 +1,5 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsTechPanel from './techservices/surrendertechpanel'
+import SurrenderAsTechPanel from './services/surrendertechpanel'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 

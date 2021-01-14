@@ -10,8 +10,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import globalReducer from './reducers/globalreducer';
 //import globalReducer from './reducers/panelmember/panelmemberreducer';
+import techreducer from './reducers/techreducer'
 
-let Store = createStore(globalReducer, 
+let Store = createStore(techreducer, 
   applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
