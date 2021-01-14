@@ -18,7 +18,7 @@ const PanelMemberForAdmin = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
                         {/* Fetch all Employee component */}
-                        <Card.Body><AddPanelMember></AddPanelMember></Card.Body>
+                        <Card.Body class="bg-custom"><br></br><AddPanelMember></AddPanelMember></Card.Body>
                         {/* Fetch all Employee component */}
                     </Accordion.Collapse>
                 </Card>
