@@ -32,10 +32,10 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Link to='/'>
-              <Nav.Link href="#" active>Home</Nav.Link>
+              <Nav.Link href="/" active>Home</Nav.Link>
             </Link>
             <Link to='/about'>
-              <Nav.Link href="#aboutus">About Us</Nav.Link>
+              <Nav.Link href="/about">About Us</Nav.Link>
             </Link>
             <Nav.Link href="#link" disabled>Log Out</Nav.Link>
           </Nav>
