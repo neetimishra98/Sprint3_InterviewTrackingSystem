@@ -64,9 +64,7 @@ const SearchEmployee = (props) => {
             return (
                 <div></div>
             );
-        }
-        
-        
+            }   
     }
 
     function renderData(employee) {   

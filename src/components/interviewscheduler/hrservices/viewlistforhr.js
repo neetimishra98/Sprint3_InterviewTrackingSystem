@@ -1,6 +1,6 @@
 //Hr Interview Scheduler Services Component : CHECK WARNING.info FOR NOTES.....
 import React from 'react'
-import { Form, Table, Jumbotron, Button ,Modal} from 'react-bootstrap';
+import { Form, Table, Jumbotron, Button ,Alert} from 'react-bootstrap';
 import  { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ShowListForHrAction from '../../../actions/interviewscheduler/showlistforhr_action';
@@ -64,35 +64,32 @@ const ViewListForHr = (props) => {
     );
 
 
- //MODAL
- function Box() {
+ //ALERT
+ function AlertInterviewMemberNotFound() {
     const [show, setShow] = useState(true);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  
-    return (
-      <>
-  
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>InterviewMember Not Found</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Entered incorrect or blank interviewid</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              OK
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  }
-
-
+    console.log(show, setShow);
+    if (show) {
+      return (
+        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>Interview Not Found</Alert.Heading>
+          <p>
+            Interview with the mentioned  id was not found. Maybe you entered id. Please check once!
+          </p>
+        </Alert>
+      );
+    }
+    else{
+        return (
+            <div></div>
+        );
+    }
+    
+    
+}
 
     function renderTableDataHr(member) {   
         console.log("interview member dispatcher object returned from the server : ", member);
-        if(member!==undefined){
+        if(member!==undefined && member!==null){
             return(
                 <tr>
                     <td>{member.data.candidateid}</td>
@@ -109,7 +106,8 @@ const ViewListForHr = (props) => {
         }
 
             if(member!==undefined && member===null){
-                return(<Box/>);
+                console.log("called the alert");
+            return(<AlertInterviewMemberNotFound show="true"/>);
         }
     
     }        

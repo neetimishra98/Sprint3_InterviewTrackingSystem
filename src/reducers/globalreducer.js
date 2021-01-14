@@ -1,4 +1,4 @@
-const globalReducer = (state={interviewmembers:[]}, action) => {
+const globalReducer = (state=[], action) => {
     switch(action.type){
         case 'SEARCH_EMPLOYEE': return action.payload;
         case 'ADD_PANEL_MEMBER': return action.payload;
@@ -13,14 +13,17 @@ const globalReducer = (state={interviewmembers:[]}, action) => {
         //case to view all members
         case 'VIEW_INTERVIEW_MEMBER_FOR_TECH': return action.payload;
 
-
+/*
         //case to view all interview members
         case 'SHOW_INTERVIEWMEMBER':
             state.interviewmembers = action.payload;
             console.log('SHOW_INTERVIEWMEMBER' , state.interview);
-            return state;
+            return state;*/
 
 
+
+ //case to view all members
+ case 'GIVE_HR_RATING': return action.payload;
 
         //case to view all members
         case 'VIEW_INTERVIEW_MEMBER_FOR_HR': return action.payload;
