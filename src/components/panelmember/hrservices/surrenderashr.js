@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState } from 'react'
-import { Form, Table, Jumbotron, Button, Modal } from 'react-bootstrap'
+import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import SurrenderAsHRAction from '../../../actions/panelmember/surrender_as_hr';
@@ -16,7 +16,7 @@ const SurrenderAsHRPanel = (props) => {
         }
     
     const handleSubmit = (event) =>{ 
-        pathVar = document.getElementById("pathVariable").value;
+        pathVar = document.getElementById("pathVar").value;
         dispatcher(SurrenderAsHRAction(pathVar));
         renderData(panelMember);
     }
@@ -32,7 +32,7 @@ const SurrenderAsHRPanel = (props) => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Enter your Panel ID</Form.Label>
-                        <Form.Control id="pathVariable" type="text" placeholder="Panel ID" />
+                        <Form.Control id="pathVar" type="text" placeholder="Panel ID" />
                     </Form.Group>
                     <Button variant="dark" type="button" call onClick={handleSubmit}>
                         Surrender
@@ -44,38 +44,37 @@ const SurrenderAsHRPanel = (props) => {
         </div>
     );
 
-    //MODAL
-    function Box() {
+    //ALERT
+    function AlertPanelMemberNotFound() {
         const [show, setShow] = useState(true);
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-      
-        return (
-          <>
-      
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Panel Not Found</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>Entered incorrect or blank id</Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  OK
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </>
-        );
+        console.log(show, setShow);
+        if (show) {
+          return (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>Panel Member Not Found</Alert.Heading>
+              <p>
+                Panel Member with the mentioned panel id was not found. Maybe you entered wrong panel id. Please check once!
+              </p>
+            </Alert>
+          );
+        }
+        else{
+            return (
+                <div></div>
+            );
+        }
       }
 
     function renderData(panelMember) {   
         console.log("panel member dispatcher object returned from the server : ", panelMember);
         if(panelMember!==undefined && panelMember!==null){
+            console.log("Surrendered successfully!");
             return(
+                <div>
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Panel ID</th>
                             <th>Location</th>
                             <th>Type</th>
                         </tr>
@@ -88,11 +87,20 @@ const SurrenderAsHRPanel = (props) => {
                         </tr>
                     </tbody>
                 </Table>
+                <Alert><Alert.Heading>Surrendered Successfully!</Alert.Heading></Alert>
+                </div>
             );
         }
-        if(panelMember!==undefined && panelMember===null){
-            return(<Box/>);
+        else if(panelMember!==undefined && panelMember.data.type!==null){
+            console.log("Already surrendered!");
+            <Alert>Already surrendered!</Alert>
         }
+        if(panelMember!==undefined && panelMember===null){
+            //return(<Box/>);
+            console.log("called the alert");
+            return(<AlertPanelMemberNotFound show="true"/>);
+        }
+        
     }        
 }
 
