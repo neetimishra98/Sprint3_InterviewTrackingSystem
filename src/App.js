@@ -18,7 +18,7 @@ function App() {
 
     {/* NAVIGATION BAR COMPONENT FROM BOOTSTRAP */}
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img
           src={Logo} 
           width="30"
