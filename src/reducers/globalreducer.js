@@ -5,8 +5,6 @@ const globalReducer = (state=[], action) => {
         case 'SHOW_EMPLOYEES': return action.payload;
 
       
-
-<<<<<<< HEAD
         //CASE TO SURRENDER AS HR
         case 'SURRENDER_AS_A_HR': return action.payload;
 
@@ -16,10 +14,11 @@ const globalReducer = (state=[], action) => {
         //case to cancel the Interview
         case 'CANCEL_INTERVIEW': return action.payload;
 
+        //case to update the Interview
+        case 'UPDATE_INTERVIEW': return action.payload;
+
     }
-=======
->>>>>>> 662842d05b06d139ec54285e1caf5e7ab189689a
 }
-}
+
 
 export default globalReducer;

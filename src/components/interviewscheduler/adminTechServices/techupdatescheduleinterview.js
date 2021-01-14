@@ -1,6 +1,25 @@
+import React from 'react'
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux';
+import UpdateInterviewScheduleAction from '../../../actions/interviewscheduler/updateinterviewschedule_action';
 
-const TechUpdateInterview = () => {
+const TechUpdateInterview = (props) => {
+
+    var pathVar = null;
+    let updateinterview = useSelector((state)=>state);
+    let dispatcher = useDispatch();
+    React.useEffect(()=>UpdateInterviewScheduleAction_Function(), [])
+        const UpdateInterviewScheduleAction_Function = () => {
+            dispatcher(UpdateInterviewScheduleAction(pathVar));
+        }
+    
+    const handleSubmit = (event) =>{ 
+        pathVar = document.getElementById("paths").value;
+        console.log(pathVar);
+        dispatcher(UpdateInterviewScheduleAction(pathVar));
+        renderData(updateinterview);
+    }
+
     return (
         // All Final Operations and Functions
         <div style={{
@@ -10,11 +29,11 @@ const TechUpdateInterview = () => {
           }}>
             <Jumbotron style={{width: 500}}>
                 <Form>
-                    <Form.Group controlId="formGroupText">
+                <Form.Group controlId="formGroupText">
                         <Form.Label>Enter Interview ID to Update</Form.Label>
-                        <Form.Control type="text" placeholder="Interview Id" id="searchParameter"/>
-                    </Form.Group>
-
+                        <Form.Control type="text" placeholder="Interview Id" id="paths"/>
+                        </Form.Group>
+    
                     <Form.Group controlId="formBasicName">
                         <Form.Label>Select Date</Form.Label>
                         <Form.Control type="date" name="dob" placeholder="Date of Birth" />
@@ -43,13 +62,36 @@ const TechUpdateInterview = () => {
                         <tbody id="table_content">
                         </tbody>
                     </Table>
-                    <Button variant="dark" type="submit" call>
-                        Update
-                    </Button>
+                    <Button variant="dark" type="button" call onClick={handleSubmit}>
+                            Update
+                        </Button>
+                        <hr></hr>
+                        {renderData(updateinterview)}
                 </Form>
             </Jumbotron>
         </div>
     );
+
+    function renderData(updateinterview) {   
+        console.log("interview member dispatcher object returned from the server : ", updateinterview);
+        if(updateinterview!==undefined && updateinterview!==null){
+            return(
+                <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                        <td>{updateinterview.data.date}</td>
+                        <td>{updateinterview.data.start_time}</td>
+                        <td>{updateinterview.data.end_time}</td>
+                        <td>{updateinterview.data.location}</td>
+                       
+                        
+                    </tr>
+                </thead>
+               
+            </Table>
+            );
+        }
+    }        
 }
 
 export default TechUpdateInterview;
