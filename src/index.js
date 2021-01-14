@@ -13,7 +13,7 @@ import globalReducer from './reducers/globalreducer';
 import techreducer from './reducers/techreducer'
 
 let Store = createStore(techreducer, 
-  applyMiddleware(ReduxThunk));
+  applyMiddleware(globalReducer));
 
 ReactDOM.render(
   <React.StrictMode>

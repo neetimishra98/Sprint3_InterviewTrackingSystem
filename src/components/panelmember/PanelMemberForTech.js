@@ -1,5 +1,5 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsTechPanel from './services/surrendertechpanel'
+//import SurrenderAsTechPanel from './services/surrendertechpanel'
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
@@ -16,7 +16,7 @@ const PanelMemberForTech = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
                     {/* Search an Panel component */}
-                    <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
+                    <Card.Body>{/*<SurrenderAsTechPanel></SurrenderAsTechPanel>*/}</Card.Body>
                     {/* Search an Panel component */}
                     </Accordion.Collapse>
                 </Card>
