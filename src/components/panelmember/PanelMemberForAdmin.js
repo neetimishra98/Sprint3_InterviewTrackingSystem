@@ -5,7 +5,7 @@ import DeletePanelMember from './services/deletepanelmember'
 import AddPanelMember from './services/addpanelmember'
 import { Accordion, Card, Button } from 'react-bootstrap'
 
-const PanelMemberForAdmin = () => {
+const PanelMemberForAdmin = (props) => {
     return (
         <div>
             {/* All underlying operations from services */}
