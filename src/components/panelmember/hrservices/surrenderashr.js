@@ -70,10 +70,11 @@ const SurrenderAsHRPanel = (props) => {
         if(panelMember!==undefined && panelMember!==null){
             console.log("Surrendered successfully!");
             return(
+                <div>
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Panel ID</th>
                             <th>Location</th>
                             <th>Type</th>
                         </tr>
@@ -86,13 +87,20 @@ const SurrenderAsHRPanel = (props) => {
                         </tr>
                     </tbody>
                 </Table>
+                <Alert><Alert.Heading>Surrendered Successfully!</Alert.Heading></Alert>
+                </div>
             );
+        }
+        else if(panelMember!==undefined && panelMember.data.type!==null){
+            console.log("Already surrendered!");
+            <Alert>Already surrendered!</Alert>
         }
         if(panelMember!==undefined && panelMember===null){
             //return(<Box/>);
             console.log("called the alert");
             return(<AlertPanelMemberNotFound show="true"/>);
         }
+        
     }        
 }
 
