@@ -91,10 +91,7 @@ const SurrenderAsHRPanel = (props) => {
                 </div>
             );
         }
-        else if(panelMember!==undefined && panelMember.data.type!==null){
-            console.log("Already surrendered!");
-            <Alert>Already surrendered!</Alert>
-        }
+        
         if(panelMember!==undefined && panelMember===null){
             //return(<Box/>);
             console.log("called the alert");
