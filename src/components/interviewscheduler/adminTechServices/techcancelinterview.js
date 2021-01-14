@@ -44,6 +44,29 @@ const TechCancelInterview = (props) => {
         </div>
     );
 
+    //ALERT
+    function AlertInterviewNotFound() {
+        const [show, setShow] = useState(true);
+        console.log(show, setShow);
+        if (show) {
+          return (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>Interview Not Found</Alert.Heading>
+              <p>
+                Interview with the mentioned id was not found.
+              </p>
+            </Alert>
+          );
+        }
+        else{
+            return (
+                <div></div>
+            );
+        }
+        
+        
+    }
+
     function renderData(interview) {   
         console.log("interview member dispatcher object returned from the server : ", interview);
         if(interview!==undefined && interview!==null){
@@ -63,6 +86,10 @@ const TechCancelInterview = (props) => {
                 </tbody>
             </Table>
             );
+        }
+        if(interview!==undefined && interview===null){
+            console.log("called the alert");
+            return(<AlertInterviewNotFound show="true"/>);
         }
     }        
 }
