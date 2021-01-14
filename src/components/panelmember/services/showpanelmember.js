@@ -1,7 +1,25 @@
+import React from 'react';
 import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
 
+import { useDispatch, useSelector } from 'react-redux';
+import ShowPanelMemberAction from '../../../actions/panelmember/showpanelmembers_action'
 
-const ShowPanelMembers = () => {
+
+const ShowPanelMembers = (props) => {
+
+    let panelMemberList = useSelector((state) => state.panelmembers);
+    let dispatcher = useDispatch();
+    React.useEffect(() => PanelMemberList(), [])
+    const PanelMemberList = () => {
+        dispatcher(ShowPanelMemberAction());
+    }
+
+    console.log("PanelMemberList: ", panelMemberList);
+    if (!Array.isArray(panelMemberList)) {
+        panelMemberList = [];
+        console.log("Set Panel Member to blank array");
+    }
+
     return (
         // All Final Operations and Functions
         <div style={{
@@ -12,27 +30,46 @@ const ShowPanelMembers = () => {
             <Jumbotron style={{ width: 700 }}>
                 <Form>
                     <Form.Group controlId="formGroupText">
-                        <Form.Label>List of Panel Members</Form.Label>
-                        <br></br>
-                        <br></br>
-                        <Button variant="dark" type="submit" call>
-                            Search
-                        </Button>
+                        <Form.Label>List All Panel Member.</Form.Label>
                     </Form.Group>
-                    <Table striped bordered hover size="sm">
-                        <thead>
-                            <th>Panel ID</th>
-                            <th>Location</th>
-                            <th>Type</th>
-                            <th>Employee</th>
-                        </thead>
-                        <tbody id="table_content">
-                        </tbody>
-                    </Table>
+                    <hr></hr>
+                    {renderData(panelMemberList)}
                 </Form>
             </Jumbotron>
         </div>
     );
+
+    function renderData(panelMemberList) {
+        console.log("panel member dispatcher object returned from the server : ", panelMemberList);
+        return panelMemberList.map((panelmember, index) => {
+            const Employeeid = panelmember.employeeEntity.employeeid;
+            const EmployeeName = panelmember.employeeEntity.name;
+            const { panelid, location, type } = panelmember //destructuring
+            return (
+                <Table striped bordered hover size="sm">
+                    <thead>
+                        <tr>
+                            <th>PanelID</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>EmployeeID</th>
+                            <th>Employee Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{panelid}</td>
+                            <td>{location}</td>
+                            <td>{type}</td>
+                            <td>{Employeeid}</td>
+                            <td>{EmployeeName}</td>
+
+                        </tr>
+                    </tbody>
+                </Table>
+            )
+        });
+    }
 }
 
 export default ShowPanelMembers;

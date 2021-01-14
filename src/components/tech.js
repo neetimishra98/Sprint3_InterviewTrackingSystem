@@ -11,7 +11,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 //import InterviewSchedulerForAdmin from './interviewscheduler/InterviewSchedulerForAdmin'
 //import PanelMemberForAdmin from './panelmember/PanelMemberForAdmin'
 import TechServices from './interviewscheduler/techservices';
-import PanelMemberForTech from './panelmember/PanelMemberForTech'
+//import PanelMemberForTech from './panelmember/PanelMemberForTech'
 import CandidateForTech from './candidate/CandidateForTech'
 // Bootstrap
 
@@ -24,7 +24,7 @@ const TechComponent = () => {
     
             <Tab eventKey="Interviewscheduler" title="TECH">
                 <TechServices></TechServices>
-                <PanelMemberForTech></PanelMemberForTech>
+                {/*<PanelMemberForTech></PanelMemberForTech>*/}
                 <CandidateForTech></CandidateForTech>
             </Tab>
             </Tabs> 
