@@ -9,7 +9,7 @@ import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import globalReducer from './reducers/globalreducer';
-import globalReducer from './reducers/panelmember/panelmemberreducer';
+//import globalReducer from './reducers/panelmember/panelmemberreducer';
 
 let Store = createStore(globalReducer, 
   applyMiddleware(ReduxThunk));
