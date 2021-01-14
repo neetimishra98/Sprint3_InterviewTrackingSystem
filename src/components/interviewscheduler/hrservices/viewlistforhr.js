@@ -1,9 +1,10 @@
 //Hr Interview Scheduler Services Component : CHECK WARNING.info FOR NOTES.....
 import React from 'react'
-import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
-
+import { Form, Table, Jumbotron, Button ,Modal} from 'react-bootstrap';
+import  { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ShowListForHrAction from '../../../actions/interviewscheduler/showlistforhr_action';
+
 
 
 const ViewListForHr = (props) => {
@@ -19,6 +20,7 @@ const ViewListForHr = (props) => {
     const handleSubmit = (event) =>{ 
         pathVar = document.getElementById("vareab").value;
         dispatcher(ShowListForHrAction(pathVar));
+        renderTableDataHr(member);
     }
 
 
@@ -53,7 +55,7 @@ const ViewListForHr = (props) => {
                             <th>Notice <br></br>Period</th>
                         </thead>
                         <tbody id="table_content">
-                        {renderData(member)}
+                        {renderTableDataHr(member)}
                         </tbody>
                     </Table>
                 </Form>
@@ -62,7 +64,33 @@ const ViewListForHr = (props) => {
     );
 
 
-    function renderData(member) {   
+ //MODAL
+ function Box() {
+    const [show, setShow] = useState(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    return (
+      <>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>InterviewMember Not Found</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Entered incorrect or blank interviewid</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              OK
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+
+
+
+    function renderTableDataHr(member) {   
         console.log("interview member dispatcher object returned from the server : ", member);
         if(member!==undefined){
             return(
@@ -79,6 +107,11 @@ const ViewListForHr = (props) => {
                 </tr>
             );
         }
+
+            if(member!==undefined && member===null){
+                return(<Box/>);
+        }
+    
     }        
 }
 

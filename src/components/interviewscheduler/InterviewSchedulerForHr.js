@@ -26,18 +26,7 @@ const InterviewSchedulerForHr = () => {
                 </Card>
 
 
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                    View All HrInterview Members
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="1">
-                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
-                    <Card.Body><ViewInterviewMembersForHr></ViewInterviewMembersForHr></Card.Body>
-                    {/* Fetch all interview members from  InterviewScheduler component  using interviewid*/}
-                    </Accordion.Collapse>
-                </Card>
+                
 
 
                 <Card>
