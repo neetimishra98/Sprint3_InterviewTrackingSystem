@@ -1,4 +1,6 @@
-const globalReducer = (state= { panelmember: [], candidate: [],interviewmember: [], interview: [] }, action) => {
+
+const HRReducer = (state= { panelmember: [], candidate: [] }, action) => {
+
     switch(action.type){
 
         //CASE TO VIEW A CANDIDATE FOR HR
@@ -44,4 +46,4 @@ const globalReducer = (state= { panelmember: [], candidate: [],interviewmember: 
 }
 }
 
-export default globalReducer;
+export default HRReducer;

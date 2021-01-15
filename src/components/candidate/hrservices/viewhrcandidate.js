@@ -83,7 +83,6 @@ const ViewACandidateForHR = (props) => {
                             <th>Primary Skills</th>
                             <th>Secondary Skills</th>
                             <th>Notice Period</th>
-                            {/*<th>Status</th>*/}
 
                         </tr>
                     </thead>
@@ -98,7 +97,6 @@ const ViewACandidateForHR = (props) => {
                             <td>{candidate.data.primaryskills}</td>
                             <td>{candidate.data.secondaryskills}</td>
                             <td>{candidate.data.noticeperiod}</td>
-                            {/*<td>{candidate.data.finalstatus}</td>*/}
                         </tr>
                     </tbody>
                 </Table>

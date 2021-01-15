@@ -8,8 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-//import globalReducer from './reducers/globalreducer';
+import globalReducer from './reducers/globalreducer';
 //import globalReducer from './reducers/panelmember/panelmemberreducer';
+//import globalReducer from './reducers/hr/globalreducer';
 
 import TechReducer from './reducers/techreducer'
 //import globalReducer from './reducers/hr/globalreducer';
