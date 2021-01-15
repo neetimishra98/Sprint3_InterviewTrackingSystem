@@ -1,4 +1,4 @@
-const TechReducer = (state={ techmember:[]}, action) => {
+const TechReducer = (state={techmember:[]}, action) => {
     switch(action.type){
 
         //case to view all members
@@ -12,7 +12,7 @@ const TechReducer = (state={ techmember:[]}, action) => {
         state.techmember=action.payload;
         console.log('GIVE_TECH_RATING', state.techmember);
         return state;
-        
+    
         //CASE TO update the Interview
         case 'UPDATE_INTERVIEW': return action.payload;
 

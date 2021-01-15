@@ -8,17 +8,17 @@ import ViewInterviewMemberForTechAction from '../../../actions/interviewschedule
 
 const ViewInterviewMemberForTech = (props) => {
 
-    var pathVar = null;
-    let member = useSelector((state)=>state);
+    var techinterviewlist = null;
+    let member = useSelector((state)=>state.techmember);
     let dispatcher = useDispatch();
     React.useEffect(()=>ViewInterviewMemberForTechAction_Function(), [])
-        const ViewInterviewMemberForTechAction_Function = () => {
-            dispatcher(ViewInterviewMemberForTechAction(pathVar));
-        }
+    const ViewInterviewMemberForTechAction_Function = () => {
+            dispatcher(ViewInterviewMemberForTechAction(techinterviewlist));
+    }
     
     const handleSubmit = (event) =>{ 
-        pathVar = document.getElementById("pathVariable").value;
-        dispatcher(ViewInterviewMemberForTechAction(pathVar));
+        techinterviewlist = document.getElementById("intid").value;
+        dispatcher(ViewInterviewMemberForTechAction(techinterviewlist));
     }
 
 
@@ -33,7 +33,7 @@ const ViewInterviewMemberForTech = (props) => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label> View Candidate Using interviewid</Form.Label>
-                        <Form.Control id="pathVariable" type="text" placeholder="Interview ID"/>
+                        <Form.Control id="intid" type="text" placeholder="Interview ID"/>
                         <br></br>
                         <br></br>
                         <Button variant="dark" type="button" call onClick={handleSubmit}>

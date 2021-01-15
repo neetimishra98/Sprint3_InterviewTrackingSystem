@@ -4,22 +4,21 @@ import { Form, Table, Jumbotron, Button, Alert } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux';
 import GiveTechRatingAction from '../../../actions/interviewscheduler/givetechratingaction'
-import TechReducer from '../../../reducers/techreducer'
 
 const GiveTechRating = (props) => {
 
-    var pathVariable = null;
-    let candidate = useSelector((state)=>state.TechReducer);
+    var techratinglist = null;
+    let interviewmember = useSelector((state)=>state.techmember);
     let dispatcher = useDispatch();
     React.useEffect(()=>GiveTechRatingAction_Function(), [])
     const GiveTechRatingAction_Function = () => {
-            dispatcher(GiveTechRatingAction(pathVariable));
+            dispatcher(GiveTechRatingAction(techratinglist));
         }
     
     const handleSubmit = (event) =>{ 
-        pathVariable = document.getElementById("interviewid").value;
-        dispatcher(GiveTechRatingAction(pathVariable));
-        renderData(candidate);
+        techratinglist = document.getElementById("interviewidforrating").value;
+        dispatcher(GiveTechRatingAction(techratinglist));
+        renderData(interviewmember);
     }
 
 
@@ -34,13 +33,13 @@ const GiveTechRating = (props) => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Give TechRating to a Candidate by Interviewid</Form.Label>
-                        <Form.Control id="interviewid" type="text" placeholder="Interview ID" />
+                        <Form.Control id="interviewidforrating" type="text" placeholder="Interview ID" />
                         </Form.Group>
                     <Button variant="dark" type="button" call onClick={handleSubmit}>
                         Search
                     </Button>
                     <hr></hr>
-                        {renderData(candidate)}
+                        {renderData(interviewmember)}
                 </Form>
             </Jumbotron>
         </div>
@@ -67,9 +66,9 @@ const GiveTechRating = (props) => {
         }
 
     }
-    function renderData(candidate) {   
-        console.log("candidate dispatcher object returned from the server : ", candidate);
-        if(candidate!==undefined && candidate!==null){
+    function renderData(interviewmember) {   
+        console.log("candidate dispatcher object returned from the server : ", interviewmember);
+        if(interviewmember!==undefined && interviewmember!==null){
             return(
                 <Table striped bordered hover size="sm">
                     <thead>
@@ -85,13 +84,13 @@ const GiveTechRating = (props) => {
                         </thead>
                         <tbody>
                         <tr>
-                            <td>{candidate.data.interviewid}</td>
-                            <td>{candidate.data.location}</td>
-                            <td>{candidate.data.date}</td>
-                            <td>{candidate.data.start_time}</td>
-                            <td>{candidate.data.end_time}</td>
-                            <td>{candidate.data.techrating}</td>
-                            <td>{candidate.data.finalstatus}</td>
+                            <td>{interviewmember.data.interviewid}</td>
+                            <td>{interviewmember.data.location}</td>
+                            <td>{interviewmember.data.date}</td>
+                            <td>{interviewmember.data.start_time}</td>
+                            <td>{interviewmember.data.end_time}</td>
+                            <td>{interviewmember.data.techrating}</td>
+                            <td>{interviewmember.data.finalstatus}</td>
                             
                         </tr>
                         </tbody>
@@ -99,7 +98,7 @@ const GiveTechRating = (props) => {
             );
         }
 
-        if(candidate!==undefined && candidate===null){
+        if(interviewmember!==undefined && interviewmember===null){
             console.log("called the alert");
             return(<AlertMemberNotFound show="true"/>);
         }

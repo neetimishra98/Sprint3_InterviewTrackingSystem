@@ -1,4 +1,4 @@
-const globalReducer = (state= [], action) => {
+/*const globalReducer = (state= { panelmember: [], candidate: [] }, action) => {
     switch(action.type){
     
         case 'SEARCH_EMPLOYEE': return action.payload;
@@ -53,3 +53,4 @@ const globalReducer = (state= [], action) => {
 
 }
 export default globalReducer;
+*/

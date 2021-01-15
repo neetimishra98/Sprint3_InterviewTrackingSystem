@@ -8,19 +8,22 @@ import { BrowserRouter } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import globalReducer from './reducers/globalreducer';
+//import globalReducer from './reducers/globalreducer';
 //import globalReducer from './reducers/panelmember/panelmemberreducer';
-import techreducer from './reducers/techreducer'
+import TechReducer from './reducers/techreducer'
 
-let Store = createStore(techreducer, 
-  applyMiddleware(globalReducer));
-
+let Store = createStore(TechReducer, 
+  applyMiddleware(ReduxThunk));
+/*
+let Store = createStore(globalReducer,
+  applyMiddleware(ReduxThunk));
+*/
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
