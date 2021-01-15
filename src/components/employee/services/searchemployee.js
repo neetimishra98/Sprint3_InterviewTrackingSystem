@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SearchEmployeeAction from '../../../actions/employee/searchemployee_action'
 
 
+
 const SearchEmployee = (props) => {
 
     var pathVar = null;
@@ -63,9 +64,7 @@ const SearchEmployee = (props) => {
             return (
                 <div></div>
             );
-        }
-        
-        
+            }   
     }
 
     function renderData(employee) {   

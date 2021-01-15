@@ -1,10 +1,31 @@
 //Hr Interview Scheduler Services Component : CHECK WARNING.info FOR NOTES.....
+import React from 'react'
+import { Form, Table, Jumbotron, Button ,Alert} from 'react-bootstrap';
+import  { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import ShowListForHrAction from '../../../actions/interviewscheduler/showlistforhr_action';
 
-import { Form, Table, Jumbotron, Button } from 'react-bootstrap';
 
-const ViewListForHr = () => {
-    return (
+
+const ViewListForHr = (props) => {
+
+    var pathVar = null;
+    let member = useSelector((state)=>state);
+    let dispatcher = useDispatch();
+    React.useEffect(()=>ShowListForHrAction_Function(), [])
+        const ShowListForHrAction_Function = () => {
+            dispatcher(ShowListForHrAction(pathVar));
+        }
     
+    const handleSubmit = (event) =>{ 
+        pathVar = document.getElementById("vareab").value;
+        dispatcher(ShowListForHrAction(pathVar));
+        renderTableDataHr(member);
+    }
+
+
+    return (
+
         <div style={{
             display: "flex",
             justifyContent: "center",
@@ -14,10 +35,10 @@ const ViewListForHr = () => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label> View Candidate Using interviewid</Form.Label>
-                        <Form.Control type="text" placeholder="Interview ID" id="searchParameter"/>
+                        <Form.Control id="vareab" type="text" placeholder="Interview ID"/>
                         <br></br>
                         <br></br>
-                        <Button variant="dark" type="submit" call>
+                        <Button variant="dark" type="button" call onClick={handleSubmit}>
                             Search
                         </Button>
                     </Form.Group>
@@ -34,14 +55,62 @@ const ViewListForHr = () => {
                             <th>Notice <br></br>Period</th>
                         </thead>
                         <tbody id="table_content">
+                        {renderTableDataHr(member)}
                         </tbody>
                     </Table>
                 </Form>
             </Jumbotron>
         </div>
     );
+
+
+ //ALERT
+ function AlertInterviewMemberNotFound() {
+    const [show, setShow] = useState(true);
+    console.log(show, setShow);
+    if (show) {
+      return (
+        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>Interview Not Found</Alert.Heading>
+          <p>
+            Interview with the mentioned  id was not found. Maybe you entered id. Please check once!
+          </p>
+        </Alert>
+      );
+    }
+    else{
+        return (
+            <div></div>
+        );
+    }
+    
+    
 }
 
+    function renderTableDataHr(member) {   
+        console.log("interview member dispatcher object returned from the server : ", member);
+        if(member!==undefined && member!==null){
+            return(
+                <tr>
+                    <td>{member.data.candidateid}</td>
+                    <td>{member.data.candidatename}</td>
+                    <td>{member.data.location}</td>
+                    <td>{member.data.qualification}</td>
+                    <td>{member.data.designation}</td>
+                    <td>{member.data.experience}</td>
+                    <td>{member.data.primaryskills}</td>
+                    <td>{member.data.secondaryskills}</td>
+                    <td>{member.data.noticeperiod}</td>
+                </tr>
+            );
+        }
 
+            if(member!==undefined && member===null){
+                console.log("called the alert");
+            return(<AlertInterviewMemberNotFound show="true"/>);
+        }
+    
+    }        
+}
 
 export default ViewListForHr;

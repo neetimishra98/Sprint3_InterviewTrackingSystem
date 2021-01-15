@@ -9,11 +9,14 @@ import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import globalReducer from './reducers/globalreducer';
-import HRReducer from './reducers/hrReducer';
+//import globalReducer from './reducers/panelmember/panelmemberreducer';
+//import globalReducer from './reducers/hr/globalreducer';
 
 let Store = createStore(globalReducer,
   applyMiddleware(ReduxThunk));
 
+
+  
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>

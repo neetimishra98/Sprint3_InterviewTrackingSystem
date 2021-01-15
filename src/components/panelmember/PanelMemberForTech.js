@@ -1,12 +1,14 @@
 //Panel Services Accessible By The Admin....
-import SurrenderAsTechPanel from './techservices/surrendertechpanel'
+//import SurrenderAsTechPanel from './techservices/surrendertechpanel'
+
 
 import { Accordion, Card, Button } from 'react-bootstrap'
 
-const PanelMemberForTech = () => {
+
+{  const PanelMemberForTech = () => {
     return (
         <div>
-            {/* All underlying operations from services */}
+            {/* All underlying operations from services*/ }
             <Accordion>
                 <Card>
                     <Card.Header>
@@ -16,13 +18,13 @@ const PanelMemberForTech = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
                     {/* Search an Panel component */}
-                    <Card.Body><SurrenderAsTechPanel></SurrenderAsTechPanel></Card.Body>
+                    <Card.Body>{/*<SurrenderAsTechPanel></SurrenderAsTechPanel>*/}</Card.Body>
                     {/* Search an Panel component */}
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
         </div>
     );
-}
+}               }
 
-export default PanelMemberForTech;
+//export default PanelMemberForTech;
