@@ -8,7 +8,7 @@ import GiveTechRatingAction from '../../../actions/interviewscheduler/givetechra
 const GiveTechRating = (props) => {
 
     var techratinglist = null;
-    let interviewmember = useSelector((state)=>state.techmember);
+    let interviewmember = useSelector((state)=>state);
     let dispatcher = useDispatch();
     React.useEffect(()=>GiveTechRatingAction_Function(), [])
     const GiveTechRatingAction_Function = () => {

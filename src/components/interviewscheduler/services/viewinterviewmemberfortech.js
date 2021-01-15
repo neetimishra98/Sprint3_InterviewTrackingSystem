@@ -9,7 +9,7 @@ import ViewInterviewMemberForTechAction from '../../../actions/interviewschedule
 const ViewInterviewMemberForTech = (props) => {
 
     var techinterviewlist = null;
-    let member = useSelector((state)=>state.techmember);
+    let member = useSelector((state)=>state);
     let dispatcher = useDispatch();
     React.useEffect(()=>ViewInterviewMemberForTechAction_Function(), [])
     const ViewInterviewMemberForTechAction_Function = () => {
