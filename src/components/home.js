@@ -16,7 +16,7 @@ const HomeComponent = () => {
     return (
         <div>
             {/* Some Logic To Check If User Logged In Is Admin Or A Panel Member.... */}
-            <AdminComponent></AdminComponent>
+            {/*<AdminComponent></AdminComponent>*/}
 
             {/* <HRComponent></HRComponent>
             <TechComponent></TechComponent> */}

@@ -79,10 +79,10 @@ const ViewACandidateForHR = (props) => {
                             <th>Location</th>
                             <th>Qualification</th>
                             <th>Designation</th>
-                            <th>Experience</th>
+                            <th>Experience(In Years)</th>
                             <th>Primary Skills</th>
                             <th>Secondary Skills</th>
-                            <th>Notice Period</th>
+                            <th>Notice Period(In Months)</th>
 
                         </tr>
                     </thead>
