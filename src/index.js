@@ -11,15 +11,15 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import globalReducer from './reducers/globalreducer';
 import HRReducer from './reducers/hrReducer';
 
-let Store = createStore(globalReducer, 
+let Store = createStore(globalReducer,
   applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
