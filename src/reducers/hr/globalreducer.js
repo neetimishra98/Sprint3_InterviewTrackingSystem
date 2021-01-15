@@ -27,8 +27,8 @@ const globalReducer = (state= { panelmember: [], candidate: [],interviewmember: 
            //case to view all members
            case 'GIVE_HR_RATING': 
            //state.interviewmember=action.payload
-           //consle.log('GIVE_HR_RATING',state.interviewmember)
-           //return state;
+           //console.log('GIVE_HR_RATING',state.interviewmember)
+          // return state;
            return action.payload;
 
 
@@ -36,9 +36,9 @@ const globalReducer = (state= { panelmember: [], candidate: [],interviewmember: 
              //case to view all members
             case 'VIEW_INTERVIEW_MEMBER_FOR_HR':
                  //state.interview=action.payload
-                //consle.log('VIEW_INTERVIEW_MEMBER_FOR_HR',state.interview)
-                //return state;
-            return action.payload;
+              //  console.log('VIEW_INTERVIEW_MEMBER_FOR_HR',state.interview)
+               // return state;
+           return action.payload;
 
 
 }

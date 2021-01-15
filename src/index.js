@@ -8,11 +8,11 @@ import { BrowserRouter } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import globalReducer from './reducers/globalreducer';
+//import globalReducer from './reducers/globalreducer';
 //import globalReducer from './reducers/panelmember/panelmemberreducer';
-//import globalReducer from './reducers/hr/globalreducer';
+import globalReducer from './reducers/hr/globalreducer';
 
-let Store = createStore(globalReducer, 
+let Store = createStore(globalReducer,
   applyMiddleware(ReduxThunk));
 
 
@@ -20,9 +20,9 @@ let Store = createStore(globalReducer,
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

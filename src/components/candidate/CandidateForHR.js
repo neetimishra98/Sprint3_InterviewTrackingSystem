@@ -15,7 +15,7 @@ const CandidateForHR = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
                     {/* Search an Candidate component */}
-                    <Card.Body><SearchCandidate></SearchCandidate></Card.Body>
+             <Card.Body><SearchCandidate></SearchCandidate></Card.Body> 
                     {/* Search an Candidate component */}
                     </Accordion.Collapse>
                 </Card>
